@@ -1,6 +1,7 @@
 import { Box, Button, Flex,Grid,GridItem,Heading,Image, Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import React from 'react'
+import { Footer } from '../components/Footer'
 import { NavBar } from '../components/NavBar'
 
 const Home: NextPage = () => {
@@ -54,7 +55,7 @@ const Home: NextPage = () => {
     
  
      
-  
+    <Footer/>
     </Flex>
   )
 }
