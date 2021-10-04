@@ -44,10 +44,18 @@ export const NavBar : React.FC<NavBarProps> = ({ }) => {
             >Categorias</MenuButton>
             <Portal>
                 <MenuList bg="black" color="white_light" borderWidth={0}>
-                <MenuItem _hover={{"bg":"orange"}}>Computer Hardware</MenuItem>
-                <MenuItem _hover={{"bg":"orange"}}>Hosting and email</MenuItem>
-                <MenuItem _hover={{"bg":"orange"}}>IT Managment</MenuItem>
-                <MenuItem _hover={{"bg":"orange"}}>Software Engineering</MenuItem>
+                <NextLink href="/desarrollodesoftware">
+                    <MenuItem _hover={{"bg":"orange"}}>Desarrollo de Software</MenuItem>
+                </NextLink>
+                <NextLink href="/hardware">
+                    <MenuItem _hover={{"bg":"orange"}}>Hardware</MenuItem>
+                </NextLink>
+                <NextLink href="/servicios">
+                    <MenuItem _hover={{"bg":"orange"}}>Servicios</MenuItem>
+                </NextLink>
+                <NextLink href="/tecnologia4">
+                    <MenuItem _hover={{"bg":"orange"}}>Tecnologia 4.0</MenuItem>
+                </NextLink>
                 </MenuList>
             </Portal>
             </Menu>
