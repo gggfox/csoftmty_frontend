@@ -1,5 +1,6 @@
 import { Button, Flex, Heading, Input, Link, Text, Stack, SimpleGrid} from '@chakra-ui/react'
-import { IconButton, Select } from '@chakra-ui/react'
+import { Box, HStack,  Select, Progress, Spacer, Checkbox} from '@chakra-ui/react'
+import { Table, Th, Tr, Td, Thead, Tbody} from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import React from 'react'
 import { NavBar } from '../components/NavBar'
@@ -10,7 +11,7 @@ const Signin: NextPage = () => {
     <Flex bg="white_dark" h='100vh' flexDirection="column">
       <NavBar></NavBar>
       <Flex height="200vh" width = "200vh" alignItems="center" justifyContent="center">
-        <Flex direction="column" bg="#7B7B7B" p={12} rounded={6}>
+        <Flex direction="column" bg="white_dark"  p={12} rounded={6}>
           <Heading ma={15} mb={6} color="white" as="b" marginBottom = "1px">Registrate ahora</Heading>
           <Text fontSize="x1" color="white" marginBottom = "15px">Al crear tu cuenta podras navegar libremente.  {" "}
             <Link size ="sm" color="cornflowerblue" href="#">   Beneficios </Link>
@@ -51,14 +52,16 @@ const Signin: NextPage = () => {
 
 
           <Button colorScheme="orange" backgroundColor="orange" mb={6}>Proceder</Button>
+
         </Flex>
-      </Flex>       
+      </Flex>  
+      
+           
     </Flex>
+    
+    
   )
 }
 
-<Text fontSize="x1" color="white" marginBottom = "15px">Al crear tu cuenta podras navegar libremente{" "}
-  <Link color="cornflowerblue" href="#">   Beneficios </Link>
-</Text>
 
 export default Signin
