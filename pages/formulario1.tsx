@@ -1,5 +1,5 @@
-import { Button, Flex, Heading, Input, Link, Text, Stack, SimpleGrid} from '@chakra-ui/react'
-import { Box, HStack,  Select, Progress, Spacer, Checkbox} from '@chakra-ui/react'
+import { Button, Flex, Divider, SimpleGrid, Text, Radio, Stack, RadioGroup} from '@chakra-ui/react'
+import { Box, HStack,  Center, Progress, Spacer, Checkbox} from '@chakra-ui/react'
 import { Table, Th, Tr, Td, Thead, Tbody} from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import React from 'react'
@@ -17,6 +17,7 @@ const Formulario_01: NextPage = () => {
               <Progress hasStripe value={10} backgroundColor="gray_dark" height="46px"  flex="3"/>
             </HStack>
           </Box>
+          <Divider />
           <Table variant="striped" colorScheme="white" >
             <Thead>
               <Tr backgroundColor = "#7B7B7B" >
@@ -27,192 +28,480 @@ const Formulario_01: NextPage = () => {
                 <Th color="white">Nos gustaria tener esta herramienta en el futuro</Th>
              </Tr>
             </Thead>
-            <Tbody >
-              <Tr>
-                <Td>Python</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Javascript</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>C#</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Java</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>html/css</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>SQL</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Node.js</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Typescript</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>bash/shell</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>C++</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>PHP</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>C</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Powershell</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Go</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Rust</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Kotlin</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Objective-C</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Ruby</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Dart</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>R</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Scala</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Swift</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Assembly</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>Perl</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>LISP</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-             <Tr>
-                <Td>COBOL</Td>              
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-                <Td ><Checkbox defaultIsChecked></Checkbox></Td>
-             </Tr>
-            </Tbody>
-          </Table>
+            </Table>
 
+
+            <Flex color="black" justify = "space-around" paddingTop = "30px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Python</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Javascript</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >C#</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Java</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >html/css</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >SQL</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Node.js</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Typescript</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >bash/shell</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >C++</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >PHP</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >C</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Powershell</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Go</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Rust</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Kotlin</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Objective-C</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Ruby</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Dart</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >R</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Scala</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Swift</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Assembly</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >Perl</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >LISP</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
+            <Flex color="black" justify = "space-around" paddingTop = "10px">
+              <Center flex="1">
+                <Text fontWeight="bold" >COBOL</Text>
+              </Center>
+              <Center flex="5">
+                <Box w="100%" bg="tomato">
+                  <RadioGroup defaultValue="4" color = "lightgray">
+                    <HStack justify = "space-between" paddingLeft = "100px" paddingRight = "200px">
+                        <Radio value="1"></Radio>
+                        <Radio value="2"></Radio>
+                        <Radio value="3"></Radio>
+                        <Radio value="4"></Radio>
+                    </HStack >
+                  </RadioGroup>
+                </Box>
+                </Center>
+            </Flex>
+            <Divider paddingTop = "10px" paddingEnd = "10px"/>
           <Box paddingTop = "20px">
             <Flex>
               <Button colorScheme="gray_dark" backgroundColor="gray_dark" flex="1">Seccion Previa</Button>
