@@ -11,15 +11,13 @@ const Login: NextPage = () => {
       <NavBar></NavBar>
       <Flex height="100vh" alignItems="center" justifyContent="center">
         <Flex direction="column" bg="#7B7B7B" p={12} rounded={6}>
-          <Img src="..\public\img\logo.png"  width="160" height="50" />
-          <Heading ma={15} mb={6} color="white" as="b" marginBottom = "1px">Bienvenido de vuelta!</Heading>
-          <Text fontSize="x1" color="white" marginBottom = "15px">Ingrese a su cuenta para navegar libremente</Text>
+          <Heading ma={15} mb={6} color="white" as="b" marginBottom = "1px">Ingresar a cuenta</Heading>
           <Text fontWeight="semibold" color="white">Email</Text>
           <Input placeholder="mail@ejemplo.com" _placeholder={{"color":"white"}} variant="filled" mb={3} type="email" bg="#7B7B7B" 
-          borderColor="white" border="4px" focusBorderColor="white" _hover={{"bg":"ghostwhite"}} textColor="black"/>
+          borderColor="white" border="4px" focusBorderColor="white" _hover={{"bg":"light_grey"}} textColor="white"/>
           <Text fontWeight="semibold" color="white">Contraseña</Text>
           <Input placeholder="********" _placeholder={{"color":"white"}} variant="filled" mb={6} type="password" bg="#7B7B7B" 
-          borderColor="white" border="4px" focusBorderColor="white" _hover={{"bg":"ghostwhite"}} textColor="black"/>
+          borderColor="white" border="4px" focusBorderColor="white" _hover={{"bg":"light_grey"}} textColor="white"/>
           <Button colorScheme="orange" backgroundColor="orange" mb={6}>Ingresar a cuenta</Button>
           <Link color="white" align="center">Todavia no tengo cuenta</Link>
         </Flex>

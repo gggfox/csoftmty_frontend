@@ -9,8 +9,8 @@ interface TarjetaProps {
 
 export const TarjetaEmpresa : React.FC<TarjetaProps> = ({ }) => {
     return(
-        <Flex>
-            <Avatar size="2xl" src="https://bit.ly/sage-adebayo" />
+        <Flex width="100%" paddingLeft="10%" paddingBottom="10" paddingTop="10">
+            <Avatar size="2xl"/>
             <Box ml="3">
                 <Text fontWeight="bold">
                     Nombre Empresa
@@ -30,6 +30,7 @@ export const TarjetaEmpresa : React.FC<TarjetaProps> = ({ }) => {
                 <Text fontSize="md">
                     Pagina
                 </Text>
+                <Button colorScheme="orange" backgroundColor="orange" mt={4} mb={2}>Ver Detalles</Button>
             </Box>
         </Flex>
     );
