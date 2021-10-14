@@ -4,10 +4,10 @@ import NextLink from 'next/link';
 import {useRouter } from 'next/router';
 
 interface TarjetaProps {
- 
+    details?: boolean
 }
 
-export const TarjetaEmpresa : React.FC<TarjetaProps> = ({ }) => {
+export const TarjetaEmpresa : React.FC<TarjetaProps> = ({ details = true}) => {
     return(
         <Flex width="100%" paddingLeft="10%" paddingBottom="10" paddingTop="10">
             <Avatar size="2xl"/>
@@ -30,7 +30,11 @@ export const TarjetaEmpresa : React.FC<TarjetaProps> = ({ }) => {
                 <Text fontSize="md">
                     Pagina
                 </Text>
-                <Button colorScheme="orange" backgroundColor="orange" mt={4} mb={2}>Ver Detalles</Button>
+                { !details 
+                  ? "" 
+                  : <Button colorScheme="orange" backgroundColor="orange" mt={4} mb={2}>Ver Detalles</Button>
+                }
+                
             </Box>
         </Flex>
     );
