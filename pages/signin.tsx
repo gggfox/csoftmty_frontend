@@ -12,7 +12,7 @@ const Signin: NextPage = () => {
       <NavBar></NavBar>
       <Flex height="200vh" width = "200vh" alignItems="center" justifyContent="center">
         <Flex direction="column" bg="white_dark"  p={12} rounded={6}>
-          <Heading ma={15} mb={6} color="white" as="b" marginBottom = "1px">Registrate ahora</Heading>
+          <Heading m={15} mb={6} color="white" as="b" marginBottom = "1px">Registrate ahora</Heading>
           <Text fontSize="x1" color="white" marginBottom = "15px">Al crear tu cuenta podras navegar libremente.  {" "}
             <Link size ="sm" color="cornflowerblue" href="#">   Beneficios </Link>
           </Text>
