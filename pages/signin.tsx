@@ -32,9 +32,9 @@ const Signin: NextPage = () => {
                 borderColor="white" border="4px" focusBorderColor="white" _hover={{"bg":"ghostwhite"}} textColor="black"/>
               <Select placeholder="Elige una..." _placeholder={{"color":"white"}} bg="#7B7B7B" border="4px" borderColor="white" textColor="black" focusBorderColor="white" >
                 <option value="option1">Computer Hardware</option>
-                <option value="option1">Hosting and email"</option>
+                <option value="option1">Hosting and email</option>
                 <option value="option1">IT Managment</option>
-                <option value="option1">Software Engineering"</option>
+                <option value="option1">Software Engineering</option>
               </Select>
             </SimpleGrid>
             <Text fontWeight="semibold" fontSize="sm" color="white">Sitio Web</Text>
