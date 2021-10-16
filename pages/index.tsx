@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   const lg_txt = (size) ? "2em":"3em"
 
   return (
-    <Flex bg="white_dark" h='100%' flexDirection="column">
+    <Flex bg="white_dark"  flexDirection="column">
       <NavBar/>
 
       <Grid
