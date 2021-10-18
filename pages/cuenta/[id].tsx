@@ -1,8 +1,9 @@
-import { Box, Button, Flex,Text } from '@chakra-ui/react'
+import { Box, Button, Flex,Link,Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import React from 'react'
 import { NavBar } from '../../components/NavBar'
 import { TarjetaEmpresa } from '../../components/TarjetaEmpresa'
+import NextLink from 'next/link';
 
 const Cuenta: NextPage = () => {
   return (
@@ -12,7 +13,12 @@ const Cuenta: NextPage = () => {
       <Flex justifyContent="space-around" w="100%">
         <TarjetaEmpresa details={false}/>
         <Flex  justifyContent="center" alignItems="center" w="100%" >
-          <Button 
+
+
+
+<NextLink href="/formulario">
+              
+                <Button 
             bg="gray_dark" 
             color="white" 
             px="9%" py="4%" 
@@ -21,6 +27,9 @@ const Cuenta: NextPage = () => {
             borderRadius="2px"
             fontSize="18px"
           >Editar Datos</Button>
+            
+              </NextLink> 
+              
           <Button 
             borderColor="orange" 
             borderWidth="10px" 
