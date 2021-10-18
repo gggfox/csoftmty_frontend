@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {  Box, Flex, Heading, Input, InputGroup, InputLeftElement, Text, Textarea } from '@chakra-ui/react';
 import { Icon } from '@chakra-ui/icon'
-import { EditIcon, DeleteIcon, PhoneIcon, EmailIcon } from '@chakra-ui/icons';
-import { FaCalendar } from 'react-icons/fa'
-import  {BsFillHeartFill, BsPersonFill, BsPencil }  from 'react-icons/bs';
+import {  EmailIcon } from '@chakra-ui/icons';
+
+import  {BsPersonFill, BsPencil }  from 'react-icons/bs';
 import {ImBubble} from 'react-icons/im'
 interface FooterProps {
  
@@ -31,8 +31,10 @@ export const Footer : React.FC<FooterProps> = ({ }) => {
                     <InputGroup>
                         <InputLeftElement
                         pointerEvents="none"
-                        children={<Icon as={BsPersonFill} name="PhoneIcon" color="gray.300" />}
-                        />
+                        
+                        >
+                            <Icon as={BsPersonFill} name="PhoneIcon" color="gray.300" />
+                        </InputLeftElement>
                         <Input type="text" placeholder="nombre" color="white_light"/>
                     </InputGroup>
 
@@ -40,8 +42,9 @@ export const Footer : React.FC<FooterProps> = ({ }) => {
                     <InputGroup>
                         <InputLeftElement
                         pointerEvents="none"
-                        children={<EmailIcon name="PhoneIcon" color="gray.300" />}
-                        />
+                        >
+                            <EmailIcon name="PhoneIcon" color="gray.300" />
+                        </InputLeftElement>
                         <Input type="email" placeholder="email" color="white_light"/>
                     </InputGroup>
                 </Flex>
@@ -49,15 +52,17 @@ export const Footer : React.FC<FooterProps> = ({ }) => {
                 <InputGroup>
                     <InputLeftElement
                     pointerEvents="none"
-                    children={<Icon as={BsPencil} name="PhoneIcon" color="gray.300" />}
-                    />
+                    ><
+                        Icon as={BsPencil} name="PhoneIcon" color="gray.300" />
+                    </InputLeftElement>
                     <Input type="text" placeholder="asunto" color="white_light"/>
                 </InputGroup>
                 <InputGroup>
                     <InputLeftElement
                     pointerEvents="none"
-                    children={<Icon as={ImBubble} name="PhoneIcon" color="gray.300" />}
-                    />
+                    >
+                        <Icon as={ImBubble} name="PhoneIcon" color="gray.300" />
+                    </InputLeftElement>
                     <Textarea  type="text" placeholder="     mensaje" color="white_light" focus="none" value={text}
                      onChange={(e:any) => {
                         if(e.target.value.trim() === ""){
