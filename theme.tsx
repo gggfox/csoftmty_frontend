@@ -16,6 +16,7 @@ const theme = extendTheme({
       black_dark: '#181818',
       gray_dark: '#4d4d4d',
       gray_light: '#E5E5E5',
+      gray: '#7b7b7b',
       white_dark: '#f3f2f2',
       white_light: '#ffffff',
       orange: '#f06534',
