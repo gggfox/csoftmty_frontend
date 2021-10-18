@@ -17,11 +17,12 @@ const Formulario: NextPage = () => {
         marginTop={20}
         flexDirection="column"
       >
-        <Flex width={"xxl"} flexDirection={"column"} backgroundColor={"gray_light"}>
+        <Flex width={"50%"} flexDirection={"column"} backgroundColor={"gray_light"}>
           <Box
             mx="auto"
             shadow="lg"
             rounded="lg"
+            width={"100%"}
           >
             <Box px={4} py={2} backgroundColor={"gray"}>
               <chakra.h1
@@ -32,20 +33,20 @@ const Formulario: NextPage = () => {
               </chakra.h1>
             </Box>
           </Box>
-            <Stack marginLeft={10}>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5}>
+            <Stack marginLeft={10} w="100%" my="15px">
+              <Radio size="lg" name="1" colorScheme="red">
                 De 0 - 50
               </Radio>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5}>
+              <Radio size="lg" name="1" colorScheme="red">
                 De 51-100
               </Radio>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5}>
+              <Radio size="lg" name="1" colorScheme="red">
                 De 101 - 200
               </Radio>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5}>
+              <Radio size="lg" name="1" colorScheme="red">
                 De 201 - 500
               </Radio>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5} marginBottom={5}>
+              <Radio size="lg" name="1" colorScheme="red">
               {">"} 500
               </Radio>
             </Stack>
@@ -60,11 +61,12 @@ const Formulario: NextPage = () => {
         marginTop={5}
         flexDirection="column"
       >
-        <Flex width={"xxl"} flexDirection={"column"} backgroundColor={"gray_light"}>
+        <Flex width={"50%"} flexDirection={"column"} backgroundColor={"gray_light"}>
           <Box
             mx="auto"
             shadow="lg"
             rounded="lg"
+            width={"100%"}
           >
             <Box px={4} py={2} backgroundColor={"gray"} width="100">
               <chakra.h1
@@ -75,20 +77,20 @@ const Formulario: NextPage = () => {
               </chakra.h1>
             </Box>
           </Box>
-            <Stack marginLeft={10}>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5}>
+            <Stack marginLeft={10} w="100%" my="15px">
+              <Radio size="lg" name="1" colorScheme="red">
               {"<"} 30 mdp
               </Radio>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5}>
+              <Radio size="lg" name="1" colorScheme="red">
                De 30-60 mdp 
               </Radio>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5}>
+              <Radio size="lg" name="1" colorScheme="red">
                De 60-120 mdp
               </Radio>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5}>
+              <Radio size="lg" name="1" colorScheme="red">
                De 120-300 mdp
               </Radio>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5} marginBottom={5}>
+              <Radio size="lg" name="1" colorScheme="red">
                {">"} 300 mdp
               </Radio>
             </Stack>
@@ -103,11 +105,12 @@ const Formulario: NextPage = () => {
         marginTop={5}
         flexDirection="column"
       >
-        <Flex width={"xxl"} flexDirection={"column"} backgroundColor={"gray_light"}>
+        <Flex width={"50%"} flexDirection={"column"} backgroundColor={"gray_light"}>
           <Box
             mx="auto"
             shadow="lg"
             rounded="lg"
+            width={"100%"}
           >
             <Box px={4} py={2} backgroundColor={"gray"} width="100">
               <chakra.h1
@@ -118,20 +121,20 @@ const Formulario: NextPage = () => {
               </chakra.h1>
             </Box>
           </Box>
-            <Stack marginLeft={10}>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5}>
+            <Stack marginLeft={10} w="100%" my="15px">
+              <Radio size="lg" name="1" colorScheme="red">
               {"<"} 30 mdp
               </Radio>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5}>
+              <Radio size="lg" name="1" colorScheme="red">
                De 30-60 mdp 
               </Radio>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5}>
+              <Radio size="lg" name="1" colorScheme="red">
                De 60-120 mdp
               </Radio>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5}>
+              <Radio size="lg" name="1" colorScheme="red">
                De 120-300 mdp
               </Radio>
-              <Radio size="lg" name="1" colorScheme="red" marginTop={5} marginBottom={5}>
+              <Radio size="lg" name="1" colorScheme="red">
                {">"} 300 mdp
               </Radio>
             </Stack>
@@ -146,11 +149,12 @@ const Formulario: NextPage = () => {
         marginTop={5}
         flexDirection="column"
       >
-        <Flex width={"xxl"} flexDirection={"column"} backgroundColor={"gray_light"}>
+        <Flex width={"50%"} flexDirection={"column"} backgroundColor={"gray_light"}>
           <Box
             mx="auto"
             shadow="lg"
             rounded="lg"
+            width={"100%"}
           >
             <Box px={4} py={2} backgroundColor={"gray"} width="100">
               <chakra.h1
@@ -161,8 +165,8 @@ const Formulario: NextPage = () => {
               </chakra.h1>
             </Box>
           </Box>
-          <Box px={4} py={2} backgroundColor={"light_grey"} width="100">
-            <NumberInput step={1} defaultValue={0} min={0} max={100}>
+          <Box px={10} py={2} backgroundColor={"light_grey"} width="100">
+            <NumberInput step={1} defaultValue={0} min={0} max={100} my="5%">
               <NumberInputField />
               <NumberInputStepper>
                 <NumberIncrementStepper />
@@ -181,11 +185,12 @@ const Formulario: NextPage = () => {
         marginTop={5}
         flexDirection="column"
       >
-        <Flex width={"xxl"} flexDirection={"column"} backgroundColor={"gray_light"}>
+        <Flex width={"50%"} flexDirection={"column"} backgroundColor={"gray_light"}>
           <Box
             mx="auto"
             shadow="lg"
             rounded="lg"
+            width={"100%"}
           >
             <Box px={4} py={2} backgroundColor={"gray"} width="100">
               <chakra.h1
@@ -196,13 +201,13 @@ const Formulario: NextPage = () => {
               </chakra.h1>
             </Box>
           </Box>
-          <Box px={4} py={2} backgroundColor={"light_grey"} width="100">
-            <Textarea placeholder="En mi opinion la Industria 4.0 es..." />
+          <Box px={10} py={2} backgroundColor={"light_grey"} width="100">
+            <Textarea my="5%" placeholder="En mi opinion la Industria 4.0 es..." />
           </Box>
         </Flex>
       </Flex>
-            {/*Pregunta 2*/}
-            <Flex
+      {/*Pregunta 12*/}
+      <Flex
         p={50}
         w="full"
         alignItems="center"
@@ -210,11 +215,12 @@ const Formulario: NextPage = () => {
         marginTop={5}
         flexDirection="column"
       >
-        <Flex width={"xxl"} flexDirection={"column"} backgroundColor={"gray_light"}>
+        <Flex width={"50%"} flexDirection={"column"} backgroundColor={"gray_light"}>
           <Box
             mx="auto"
             shadow="lg"
             rounded="lg"
+            width={"100%"}
           >
             <Box px={4} py={2} backgroundColor={"gray"} width="100">
               <chakra.h1
@@ -225,26 +231,26 @@ const Formulario: NextPage = () => {
               </chakra.h1>
             </Box>
           </Box>
-            <Stack marginLeft={10}>
-              <Checkbox  size="lg" name="1" colorScheme="red" marginTop={5}>
+            <Stack marginLeft={10} w="100%" my="15px">
+              <Checkbox  size="lg" name="1" colorScheme="red">
                Big Data
               </Checkbox >
-              <Checkbox  size="lg" name="1" colorScheme="red" marginTop={5}>
+              <Checkbox  size="lg" name="1" colorScheme="red">
               Internet of Things (Iot)
               </Checkbox >
-              <Checkbox  size="lg" name="1" colorScheme="red" marginTop={5}>
+              <Checkbox  size="lg" name="1" colorScheme="red">
               Realidad Augmentada (AR)
               </Checkbox >
-              <Checkbox  size="lg" name="1" colorScheme="red" marginTop={5}>
+              <Checkbox  size="lg" name="1" colorScheme="red">
               Inteligencia Artificial
               </Checkbox >
-              <Checkbox  size="lg" name="1" colorScheme="red" marginTop={5} marginBottom={5}>
+              <Checkbox  size="lg" name="1" colorScheme="red">
               Seguridad Informatica
               </Checkbox >
-              <Checkbox  size="lg" name="1" colorScheme="red" marginTop={5} marginBottom={5}>
+              <Checkbox  size="lg" name="1" colorScheme="red">
               3D Printing
               </Checkbox >
-              <Checkbox  size="lg" name="1" colorScheme="red" marginTop={5} marginBottom={5}>
+              <Checkbox  size="lg" name="1" colorScheme="red">
               Robótica
               </Checkbox >
             </Stack>
