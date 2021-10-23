@@ -9,7 +9,7 @@ import styles from '../styles/Home.module.css'
 import { InputField } from '../components/InputField'
 import { SelectField } from '../components/SelectField'
 
-const Signin: NextPage = () => {
+const Signup: NextPage = () => {
   return (
     <Flex bg="white_dark" flexDirection="column" w="100vw">
       <NavBar></NavBar>
@@ -90,4 +90,4 @@ const Signin: NextPage = () => {
 }
 
 
-export default Signin
+export default Signup
