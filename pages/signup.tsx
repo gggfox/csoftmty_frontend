@@ -1,11 +1,9 @@
-import { Button, Flex, Heading, Input, Link, Text, Stack, SimpleGrid, FormControl, FormLabel, FormErrorMessage} from '@chakra-ui/react'
-import { Box, HStack,  Select, Progress, Spacer, Checkbox} from '@chakra-ui/react'
-import { Table, Th, Tr, Td, Thead, Tbody} from '@chakra-ui/react'
+import { Button, Flex, Heading, Link, Text} from '@chakra-ui/react'
+import { Box} from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import React from 'react'
 import { NavBar } from '../components/NavBar'
 import {Formik, Form} from 'formik'
-import styles from '../styles/Home.module.css'
 import { InputField } from '../components/InputField'
 import { SelectField } from '../components/SelectField'
 
