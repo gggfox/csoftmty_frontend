@@ -1,4 +1,4 @@
-import { Box, Flex, Button } from "@chakra-ui/react";
+import { Box, Flex, Button, useToast } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import type { NextPage } from 'next'
 import React from 'react'
@@ -7,8 +7,10 @@ import { IntegerInputField } from "../components/form/IntegerInputField";
 import { RadioInputField } from "../components/form/RadioInputField";
 import { TextAreaInputField } from "../components/form/TextAreaInputField";
 import { NavBar } from '../components/NavBar'
+import axios from 'axios'
 
 const Formulario: NextPage = () => {
+  const toast = useToast()
 
   let tecnologias4_0 = [
     "Big Data",
@@ -31,15 +33,93 @@ const Formulario: NextPage = () => {
         }
         onSubmit={async (values,{setErrors}) => {
           console.log(values)
-          const response = "awaits response from server"
-          if(response) {
-            //setErrors(toErrorMap(response));
-          }else if (response){
-              //router.push('/');
-          }
+          
+          try {
+            
+              const token = localStorage.getItem('token') 
+            const config = {
+              headers: { Authorization: `Bearer ${token}`}
+            }
+
+            const {data} = await axios.post(
+              `${process.env.base_url}/users/enterprise`,
+            {"sPhone": "818281818281",
+            "oPublicData": {
+                  "sPublicName": "Sofex",
+                  "sPublicInstagram": "sofex.tech",
+                  "sPublicFacebook": "sofex",
+                  "sPublicTwitter": "sofex",
+                  "sPublicLinkedin": "sofex",
+                  "sPublicAddress": "Sofex Address",
+                  "sPublicPhone": "Sofex Phone",
+                  "sPublicEmail": "contacto@sofex.com.mx",
+                  "sPublicProductsDescription": "sofex products desc",
+                  "sPublicServicesDescription": "sofex services desc"
+              },
+            "oPrivateData": {
+              "iQtyEmployeesNL": 2,
+              "iNumYearlySales": 2,
+              "iNumYearlySalesGrowth": 2,
+              "iPerYearlyGrowth": 2,
+              "iPerTec4Sales": 2,
+              "iAvgSalesPerEmp": 2,
+              "iPerSales3Year": 3,
+              "iPerSalesGrowth": 1,
+              "iPerInternationalSales": 2,
+              "iCertifications": 3,
+              "iSectClient": 1,
+              "iCurrI4ThemesBigData": true,
+              "iCurrI4ThemesIot": true,
+              "iCurrI4ThemesRA": true,
+              "iCurrI4ThemesIA": false,
+              "iCurrI4ThemesSecurity": true,
+              "iCurrI4Themes3DP": true,
+              "iCurrI4ThemesRobotica": false,
+              "iImportantCustumers": "Roger String",
+              "iImpI4ThemesBigData": true,
+              "iImpI4ThemesIot": true,
+              "iImpI4ThemesRA": true,
+              "iImpI4ThemesIA": true,
+              "iImpI4ThemesSecurity": false,
+              "iImpI4Themes3DP": true,
+              "iImpI4ThemesRobotica": true
+        }},config)
+            console.log(data)
+
+            toast({
+              title: "Felicidades",
+              description: `La encuesta ha sido completada exitoamente`,
+              status: "success",
+              duration: 9000,
+              isClosable: true,
+          
+            })
+            
+            }catch(err){
+              if(axios.isAxiosError(err)){
+                const msg = err.response?.data.message             
+                toast({
+                title: "La cuenta no pudo ser creada.",
+                description: `${msg}`,
+                status: "warning",
+                duration: 9000,
+                isClosable: true,
+            })
+              }else{
+                    
+                toast({
+                title: "Error inesperado",
+                description: `${err}`,
+                status: "error",
+                duration: 9000,
+                isClosable: true,
+           
+              })
+
+            }}
+         
         }}>
           {({isSubmitting}) => (
-            <Flex justifyContent="center" h="100%"  w="100%">
             <Form>
               <Flex alignItems="center" w="50%" h="100%" flexDirection="column" p={10}>
                 <RadioInputField
@@ -135,10 +215,8 @@ const Formulario: NextPage = () => {
                 >
                   Proceder
                 </Button>
-
                 </Flex>
               </Form>
-              </Flex>
             
           )}
         </Formik>

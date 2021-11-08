@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Link, Text} from '@chakra-ui/react'
+import { Button, Flex, Heading, Link, Text, useToast} from '@chakra-ui/react'
 import { Box} from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import React from 'react'
@@ -6,8 +6,11 @@ import { NavBar } from '../components/NavBar'
 import {Formik, Form} from 'formik'
 import { InputField } from '../components/InputField'
 import { SelectField } from '../components/SelectField'
+import axios from 'axios'
 
 const Signup: NextPage = () => {
+  const toast = useToast()
+  axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
   return (
     <Flex bg="white_dark" flexDirection="column" w="100vw">
       <NavBar></NavBar>
@@ -16,12 +19,58 @@ const Signup: NextPage = () => {
         initialValues={{ name: "", phone: "", email: "", sector:"", business:"", role:"", password:"", confirmation:""}}
         onSubmit={async (values,{setErrors}) => {
           console.log(values)
-          const response = "awaits response from server"
-          if(response) {
-            //setErrors(toErrorMap(response));
-        }else if (response){
-            //router.push('/');
-        }
+       
+            try {
+              if(values.password !== values.confirmation){
+                throw 'La contraseña no es igual a la confirmacion'
+              }
+              const {data} = await axios.post(
+              `${process.env.base_url}/users`,
+              {
+                sName: values.name,
+                sEmail: values.email,
+                sPassword: values.password
+              })
+              console.log(data)
+
+              toast({
+                title: "Felicidades",
+                description: `El usuario ${values.email} ha sido registrado exitoamente`,
+                status: "success",
+                duration: 9000,
+                isClosable: true,
+           
+              })
+            
+            }catch(err){
+              if(axios.isAxiosError(err)){
+                const msg = err.response?.data.message             
+                toast({
+                title: "La cuenta no pudo ser creada.",
+                description: msg,
+                status: "warning",
+                duration: 9000,
+                isClosable: true,
+            })
+              }else{
+                    
+                toast({
+                title: "Error inesperado",
+                description: `${err}`,
+                status: "error",
+                duration: 9000,
+                isClosable: true,
+           
+              })
+
+            }}
+          
+
+        //   if(response) {
+        //     //setErrors(toErrorMap(response));
+        // }else if (response){
+        //     //router.push('/');
+        // }
         }}>
           {({isSubmitting}) => (
             <Flex justifyContent="center" h="100%" bg="white_dark">

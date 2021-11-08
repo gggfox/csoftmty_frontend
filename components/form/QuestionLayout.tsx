@@ -9,7 +9,7 @@ type QuestionLayoutProps = InputHTMLAttributes<HTMLInputElement> & {
 export const QuestionLayout: React.FC<QuestionLayoutProps> = ({children, question, size: _, ...props}) => {
     return (    
         <Flex bg="gray_light" w="100%" flexDirection="column" justifyContent="center" mb="10%">
-            <Heading bg="gray" fontWeight="light" fontSize="3xl" color="white_light" py={4} px={8}>
+            <Heading bg="gray" fontWeight="light" fontSize="100%" color="white_light" py={4} px={8}>
                 {question}
             </Heading>
             <Flex w="100%" justifyContent="center" alignItems="center"  p={10}>

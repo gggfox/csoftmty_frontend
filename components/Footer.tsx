@@ -5,6 +5,7 @@ import {  EmailIcon } from '@chakra-ui/icons';
 
 import  {BsPersonFill, BsPencil }  from 'react-icons/bs';
 import {ImBubble} from 'react-icons/im'
+import { useWindowSize } from '../hooks/useWindowSize';
 interface FooterProps {
  
 }
@@ -12,9 +13,11 @@ interface FooterProps {
 
 export const Footer : React.FC<FooterProps> = ({ }) => {
     const [text, setText] = useState("")
+    const size = useWindowSize();
+    const isDesktop = (size?.width as number >= 650) ? true : false
 
     return (
-        <Flex bg="black_dark" h="60vh" flexDirection="column" alignItems="center">
+        <Flex bg="black_dark" h="60vh" flexDirection="column" alignItems="center" zIndex={2} p={5}>
             
             <Heading color="gray_dark" mt={10}>CONTACTANOS</Heading>
             <Text color="gray_dark">Lunes a viernes de 9:00 a 14:00 y de 16:00 a 18:30 horas</Text>
@@ -28,6 +31,7 @@ export const Footer : React.FC<FooterProps> = ({ }) => {
                    <Text color="gray_dark" fontSize="md">8340-7840</Text> 
                 </Flex>
 
+                {!isDesktop ? (""):(
                 <Flex ml={20} flexDirection="column" w="50%">
 
                 <Flex mt={10} mb={2}>
@@ -73,7 +77,7 @@ export const Footer : React.FC<FooterProps> = ({ }) => {
                         }
                      }}/>
                 </InputGroup>
-                </Flex>
+                </Flex>)}
             </Flex>
         </Flex>
     );
