@@ -14,7 +14,7 @@ export const Footer : React.FC<FooterProps> = ({ }) => {
     const [text, setText] = useState("")
 
     return (
-        <Flex bg="black_dark" h="60vh" flexDirection="column" alignItems="center">
+        <Flex bg="black_dark" h="50vh" flexDirection="column" alignItems="center" px = {[2, 10, 20]} py = {[1, 5, 10]}>
             
             <Heading color="gray_dark" mt={10}>CONTACTANOS</Heading>
             <Text color="gray_dark">Lunes a viernes de 9:00 a 14:00 y de 16:00 a 18:30 horas</Text>

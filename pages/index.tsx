@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       <NavBar/>
 
       <Grid
-        h="100%"
+        h={['100vh', '85vh', '93vh', '100vh']} 
         w="100%"
         templateRows="repeat(16, 1fr)"
         templateColumns="repeat(48, 1fr)"
@@ -46,7 +46,7 @@ const Home: NextPage = () => {
               color="white_light" 
               fontWeight="bold" 
               fontFamily="lato" 
-              fontSize={lg_txt} 
+              fontSize={['6em','2em', '4em', '6em']} 
               align="center" 
               textShadow="1px 1px orange"
             >

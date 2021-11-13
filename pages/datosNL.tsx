@@ -7,12 +7,12 @@ import styles from '../styles/Home.module.css'
 
 const DatosNL: NextPage = () => {
   const size = global.window && window.innerWidth < 800
-  const lg_txt = (size) ? "3em":"4em"
+  const lg_txt = (size) ? "2em":"4em"
   return (
-    <Flex bg="white_dark" h='100vh' flexDirection="column">
+  <Flex bg="white_dark" h = '100vh' flexDirection="column" >
       <NavBar></NavBar>
       <Grid
-        h="100%"
+        h= {['90vh', '95vh', '100vh']} 
         w="100%"
         templateRows="repeat(16, 1fr)"
         templateColumns="repeat(48, 1fr)"
@@ -25,7 +25,7 @@ const DatosNL: NextPage = () => {
               src="https://d1bvpoagx8hqbg.cloudfront.net/originals/experience-monterrey-mexico-sergio-2b52a87fb417bfb2ef8a81a4318ac77b.jpg" 
               alt="logo" 
               width="100%" 
-              height="100vh" 
+              height="100%" 
             />
           </GridItem>
 
@@ -39,15 +39,15 @@ const DatosNL: NextPage = () => {
           </GridItem>
 
 
-          <GridItem rowSpan={6} colSpan={25} rowStart={6} colStart={12}>
+          <GridItem rowSpan={6} colSpan={36} rowStart={5} colStart={6}>
             <Heading 
               h="100%" 
               color="orange" 
               fontWeight="bold" 
               fontFamily="lato" 
-              fontSize={lg_txt} 
+              fontSize={['6em','2em', '4em', '6em']} 
               align="center" 
-              textShadow="2px 1px black"
+              textShadow="1px 1px black"
             >
               Crecimiento en las industrias TIC de Nuevo León
             </Heading>      
@@ -55,9 +55,9 @@ const DatosNL: NextPage = () => {
 
           <GridItem 
             rowSpan={3} 
-            colSpan={25} 
-            rowStart={11} 
-            colStart={12}
+            colSpan={26} 
+            rowStart={12} 
+            colStart={10}
           >
             <Flex 
               flexDirection="column" 
@@ -68,6 +68,7 @@ const DatosNL: NextPage = () => {
                 backgroundColor="#ffffff00" 
                 borderRadius={0} 
                 borderWidth={5} 
+                size = "lg"
                 p={6} 
                 color="white_light" 
                 _hover={{color:"gray_dark", backgroundColor:"white_light", borderColor:"white_light"}}
@@ -79,7 +80,7 @@ const DatosNL: NextPage = () => {
         </Grid>
 
         <Grid
-        h="100%"
+        h="80%"
         w="100%"
         templateRows="repeat(16, 1fr)"
         templateColumns="repeat(48, 1fr)"
@@ -96,7 +97,7 @@ const DatosNL: NextPage = () => {
               color="black" 
               fontWeight="bold" 
               fontFamily="lato" 
-              fontSize={lg_txt} 
+              fontSize={['6em','2em', '4em', '6em']} 
               align="center"
             >
               Datos Nuevo León

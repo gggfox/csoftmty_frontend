@@ -17,7 +17,7 @@ const Formulario: NextPage = () => {
         marginTop={20}
         flexDirection="column"
       >
-        <Flex width={"50%"} flexDirection={"column"} backgroundColor={"gray_light"}>
+        <Flex width={["50%", "100%", "80%", "50%"]} flexDirection={"column"} backgroundColor={"gray_light"}>
           <Box
             mx="auto"
             shadow="lg"
@@ -34,7 +34,7 @@ const Formulario: NextPage = () => {
             </Box>
           </Box>
             <Stack marginLeft={10} w="100%" my="15px">
-              <Radio size="lg" name="1" colorScheme="red">
+              <Radio size="lg" name="1" colorScheme="red" >
                 De 0 - 50
               </Radio>
               <Radio size="lg" name="1" colorScheme="red">
@@ -61,7 +61,7 @@ const Formulario: NextPage = () => {
         marginTop={5}
         flexDirection="column"
       >
-        <Flex width={"50%"} flexDirection={"column"} backgroundColor={"gray_light"}>
+        <Flex width={["50%", "100%", "80%", "50%"]} flexDirection={"column"} backgroundColor={"gray_light"}>
           <Box
             mx="auto"
             shadow="lg"
@@ -105,7 +105,7 @@ const Formulario: NextPage = () => {
         marginTop={5}
         flexDirection="column"
       >
-        <Flex width={"50%"} flexDirection={"column"} backgroundColor={"gray_light"}>
+        <Flex width={["50%", "100%", "80%", "50%"]} flexDirection={"column"} backgroundColor={"gray_light"}>
           <Box
             mx="auto"
             shadow="lg"
@@ -149,7 +149,7 @@ const Formulario: NextPage = () => {
         marginTop={5}
         flexDirection="column"
       >
-        <Flex width={"50%"} flexDirection={"column"} backgroundColor={"gray_light"}>
+        <Flex width={["50%", "100%", "80%", "50%"]} flexDirection={"column"} backgroundColor={"gray_light"}>
           <Box
             mx="auto"
             shadow="lg"
@@ -185,7 +185,7 @@ const Formulario: NextPage = () => {
         marginTop={5}
         flexDirection="column"
       >
-        <Flex width={"50%"} flexDirection={"column"} backgroundColor={"gray_light"}>
+        <Flex width={["50%", "100%", "80%", "50%"]} flexDirection={"column"} backgroundColor={"gray_light"}>
           <Box
             mx="auto"
             shadow="lg"
@@ -215,7 +215,7 @@ const Formulario: NextPage = () => {
         marginTop={5}
         flexDirection="column"
       >
-        <Flex width={"50%"} flexDirection={"column"} backgroundColor={"gray_light"}>
+        <Flex width={["50%", "100%", "80%", "50%"]} flexDirection={"column"} backgroundColor={"gray_light"}>
           <Box
             mx="auto"
             shadow="lg"

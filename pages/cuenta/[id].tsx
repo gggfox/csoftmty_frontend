@@ -21,11 +21,12 @@ const Cuenta: NextPage = () => {
                 <Button 
             bg="gray_dark" 
             color="white" 
-            px="9%" py="4%" 
-            mr="10px" 
+            px= {["9%", "11%", "7%", "9%"]} 
+            py="4%" 
+            mr="14px" 
             _hover={{"background-color":"black"}} 
             borderRadius="2px"
-            fontSize="18px"
+            fontSize={["18px", "10px", "14px", "18px"]} 
           >Editar Datos</Button>
             
               </NextLink> 
@@ -33,11 +34,11 @@ const Cuenta: NextPage = () => {
           <Button 
             borderColor="orange" 
             borderWidth="10px" 
-            px="8%" 
+            px= {["9%", "5%", "7%", "9%"]} 
             py="3%" 
             bg="#00000000" 
             color="orange"
-            fontSize="19px"
+            fontSize={["18px", "10px", "14px", "18px"]} 
             _hover={{"background-color":"white"}}
             borderRadius="2px">
               <Text fontWeight="bold">Editar Cuenta</Text>

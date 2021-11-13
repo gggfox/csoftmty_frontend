@@ -9,7 +9,7 @@ interface TarjetaProps {
 
 export const TarjetaEmpresa : React.FC<TarjetaProps> = ({ details = true}) => {
     return(
-        <Flex width="100%" paddingLeft="10%" paddingBottom="10" paddingTop="10">
+        <Flex width="100%" paddingLeft="10%" paddingBottom="10" paddingTop="10" paddingRight = "10">
             <Avatar size="2xl"/>
             <Box ml="3">
                 <Text fontWeight="bold">

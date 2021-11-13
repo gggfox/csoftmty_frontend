@@ -11,7 +11,7 @@ import { SelectField } from '../components/SelectField'
 
 const Signin: NextPage = () => {
   return (
-    <Flex bg="white_dark" flexDirection="column" w="100vw">
+    <Flex bg="white_dark" flexDirection="column" w="100vw" h='100vh'>
       <NavBar></NavBar>
       <Box m={20}/>
       <Formik 
@@ -29,9 +29,9 @@ const Signin: NextPage = () => {
             <Flex justifyContent="center" h="100%" bg="white_dark">
               
               <Form>
-              <Flex bg="gray_dark" justifyContent="center" alignItems="center" borderRadius="10px" w="40vw" h="100%" flexDirection="column" p={10}>
+              <Flex bg="gray_dark" justifyContent="center" alignItems="center" borderRadius="10px" w= {['40vh', '35vh', '50vh', '40vh']}  h="100%" flexDirection="column" p={10}>
                 <Box mt={8}>
-                  <Heading color="white" as="b" m="6px">Registrate ahora</Heading>
+                  <Heading color="white" as="b" m="5px" textAlign = "center">Registrate ahora</Heading>
                   <Text fontSize="x1" color="white" mb = "15px">Al crear tu cuenta podras navegar libremente.  {" "}
                     <Link size ="sm" color="cornflowerblue" href="#">   Beneficios </Link>
                   </Text>

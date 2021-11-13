@@ -16,7 +16,7 @@ export const NavBar : React.FC<NavBarProps> = ({ }) => {
 
     const user_id = 1 // luego necesitamos un hook o algo para obtener el user id y guardarlo en el cliente
     return (
-        <Flex bg="white_light"  justifyContent="space-between" alignItems="center" boxShadow="md" position="fixed" w="100vw" zIndex={1} flexDirection="row" h={16}>
+        <Flex bg="white_light"  justifyContent="space-between" alignItems="center" boxShadow="md" position="fixed" w="100%" zIndex={1} flexDirection="row" h={16}>
             
             <NextLink href="/"><Link mx={5} my={2}>
             <Image src={logo} alt="logo" width="160" height="50"/></Link>

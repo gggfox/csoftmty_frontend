@@ -9,8 +9,8 @@ const Login: NextPage = () => {
   return (
     <Flex bg="white_dark" h='100vh' flexDirection="column">
       <NavBar></NavBar>
-      <Flex height="100vh" alignItems="center" justifyContent="center">
-        <Flex direction="column" bg="#7B7B7B" p={12} rounded={6}>
+      <Flex height="100vh" alignItems="center" justifyContent="center" align = "center">
+        <Flex direction="column" bg="#7B7B7B" p={12} rounded={6} justifyContent="center" width = {['60vh', '80vh', '70vh', '60vh']} >
           <Heading m={15} mb={6} color="white" as="b" marginBottom = "1px">Ingresar a cuenta</Heading>
           <Text fontWeight="semibold" color="white">Email</Text>
           <Input placeholder="mail@ejemplo.com" _placeholder={{"color":"white"}} variant="filled" mb={3} type="email" bg="#7B7B7B" 
