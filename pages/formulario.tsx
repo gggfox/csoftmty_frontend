@@ -8,6 +8,9 @@ import { RadioInputField } from "../components/form/RadioInputField";
 import { TextAreaInputField } from "../components/form/TextAreaInputField";
 import { NavBar } from '../components/NavBar'
 import axios from 'axios'
+import { QuestionLayout } from "../components/form/QuestionLayout";
+import { InputField } from "../components/InputField";
+import { TextInputField } from "../components/form/TextInputField";
 
 const Formulario: NextPage = () => {
   const toast = useToast()
@@ -121,7 +124,23 @@ const Formulario: NextPage = () => {
         }}>
           {({isSubmitting}) => (
             <Form>
+
               <Flex alignItems="center" w="50%" h="100%" flexDirection="column" p={10}>
+                <QuestionLayout question={"Datos Publicos"} flex="column">
+
+                  <TextInputField name="PublicName" question="Nombre de Empresa"/>
+                  <TextInputField name="Instagram" question="Nombre de Empresa"/>
+                  <TextInputField name="Facebook" question="Nombre de Empresa"/>
+                  <TextInputField name="Twitter" question="Nombre de Empresa"/>
+                  <TextInputField name="Linkedin" question="Nombre de Empresa"/>
+                  <TextInputField name="Address" question="Nombre de Empresa"/>
+                  <TextInputField name="Phone" question="Nombre de Empresa"/>
+                  <TextInputField name="Email" question="Nombre de Empresa"/>
+                  <TextInputField name="ProductsDescription" question="Nombre de Empresa"/>
+                  <TextInputField name="ServicesDescription" question="Nombre de Empresa"/>
+                </QuestionLayout>
+
+
                 <RadioInputField
                   name="Q01"
                   question="1 - ¿Cuanto personal tiene tu empresa en Nuevo Leon?"

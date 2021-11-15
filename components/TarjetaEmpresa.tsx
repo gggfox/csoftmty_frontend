@@ -15,7 +15,7 @@ interface TarjetaProps{
 
 export const TarjetaEmpresa : React.FC<TarjetaProps & BoxProps> = ({ details = true,businessId,business,name,email,phone, ...props}) => {
     return(
-        <Flex width="100%"  paddingBottom="10" paddingTop="10" {...props} justifyContent="Center" >
+        <Flex width="100%"  paddingBottom="10" paddingTop="10" {...props} >
             <Avatar size="2xl"/>
             <Box ml="3">
                 <Text fontWeight="bold">

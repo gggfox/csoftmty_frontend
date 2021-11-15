@@ -55,7 +55,6 @@ const Categoria: NextPage = () => {
       <NavBar></NavBar>
       <Flex alignItems="center" justifyContent="center" flexDirection="column" width="80%">
         <Heading fontSize="6vh" mb={20} mt={20} justifyContent="center" color="light_grey">{cleanTitle(name as string)}</Heading>
-        {cid}
         <Flex alignItems="center" justifyContent="space-around" width="100%" flexBasis='50%' flexFlow='wrap'>
       
           {content}

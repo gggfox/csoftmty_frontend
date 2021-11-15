@@ -13,12 +13,22 @@ const Cuenta: NextPage = () => {
   const isDesktop = (size?.width as number >= 650) ? true : false
   const router = useRouter()
   const [user, setUser] = useState<any>([])
-
+  let {id} = router.query;
+  const [isMyPage, setIsMyPage] = useState(false);
+  //router.reload(window.location.pathname)
+ 
     useEffect(() => {
     const f = async () => {
-      const token = localStorage.getItem('token')
+      const token = window.localStorage.getItem('token')
+      const myId = await window?.localStorage?.getItem('myId');
       let {id} = router.query
-      console.log(id)
+      if(myId == id){
+        setIsMyPage(true);
+      }else{
+        setIsMyPage(false)
+      }
+      
+      
       let page_content:any = []
       if (id) {
 
@@ -28,7 +38,7 @@ const Cuenta: NextPage = () => {
       )
         
       setUser(data.enterprise)
-      console.log('USER',user)
+   
       }
     }
     f()
@@ -36,21 +46,24 @@ const Cuenta: NextPage = () => {
 
 
   return (
-    <Flex bg="white_dark" h='100vh' flexDirection="column">
+    <Flex bg="white_dark" h='100vh' flexDirection="column" w="100%">
       <NavBar></NavBar>
       <Box m={10}></Box>
-      <Flex justifyContent="space-around" w="100%" flexDirection={isDesktop ? "row" : "column"}>
-        {(!user) ? console.log(user) : (
+      <Flex justifyContent={!isMyPage ? "space-around" : "flex-start"} w="100%" flexDirection={(isDesktop || !isMyPage) ? "row" : "column"} alignContent="flex-start">
+        {(!user) ? (null) : (
         <TarjetaEmpresa businessId={user._id} business={user.sPublicName} name={user.sRole} email={user.sEmail} phone={user.sPhone} details={false} ml={isDesktop ? "4em": "0em"} />
           
         )}
+
+
+
+     {!isMyPage ? (null) : (   
         <Flex  flexDirection={isDesktop ? "row" : "column"} justifyContent="center" alignItems="center" w="100%" >
 
 
 
-<NextLink href="/formulario">
-              
-                <Button 
+            <NextLink href="/formulario">
+            <Button 
             bg="gray_dark" 
             color="white" 
             w={isDesktop ? "10em": "15em"} 
@@ -75,7 +88,8 @@ const Cuenta: NextPage = () => {
             fontSize="18px">
               <Text fontWeight="bold">Editar Cuenta</Text>
             </Button>
-        </Flex>
+            
+        </Flex>)}
         
       </Flex>
       
