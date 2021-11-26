@@ -1,17 +1,19 @@
 import { Button, Flex, Heading, Input, Link, Text, Img, Box, useToast } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import React, { createContext, useContext } from 'react'
-import logo from '../public/img/logo.png'
+import React from 'react'
 import { NavBar } from '../components/NavBar'
-import styles from '../styles/Home.module.css'
 import { InputField } from '../components/InputField'
 import { Formik, Form } from 'formik'
 import axios from 'axios'
-import { getDomainLocale } from 'next/dist/shared/lib/router/router'
+import {useWindowSize} from '../hooks/useWindowSize'
 
 const Login: NextPage = () => {
     const toast = useToast()
+    const size = useWindowSize(); 
+    
+    
   return (
+     
     <Flex 
       bg="white_dark" 
       h='100vh' 
@@ -26,6 +28,7 @@ const Login: NextPage = () => {
         <Flex 
           direction="column" 
           bg="gray_dark" 
+         
           p={12} 
           rounded={6}
         >
@@ -86,9 +89,9 @@ const Login: NextPage = () => {
             <Flex justifyContent="center" h="100%" bg="white_dark">
               
               <Form>
-              <Flex bg="gray_dark"  alignItems="center"  w="40vw" h="100%" flexDirection="column" p={10}>
+              <Flex bg="gray_dark"  alignItems="center"  w={size?.width as number >= 650 ? "40vw" : "100%"} h="100%" flexDirection="column" p={10}>
             
-                  <Heading color="white" as="b" m="6px">Ingresar a tu cuenta</Heading>
+                  <Heading color="white" as="b" m="3px" mb="1em" fontSize="1.9em">Ingresa a tu cuenta</Heading>
 
 
                   <InputField name="email" placeholder="ejemplo@gmial.com" label="Email"/>

@@ -11,10 +11,11 @@ import axios from 'axios'
 import { QuestionLayout } from "../components/form/QuestionLayout";
 import { InputField } from "../components/InputField";
 import { TextInputField } from "../components/form/TextInputField";
+import { useWindowSize } from "../hooks/useWindowSize";
 
 const Formulario: NextPage = () => {
   const toast = useToast()
-
+  const size = useWindowSize();
   let tecnologias4_0 = [
     "Big Data",
     "Internet of Things (Iot)",
@@ -125,7 +126,7 @@ const Formulario: NextPage = () => {
           {({isSubmitting}) => (
             <Form>
 
-              <Flex alignItems="center" w="50%" h="100%" flexDirection="column" p={10}>
+              <Flex alignItems="center" w={size?.width as number >= 650 ? "50%" : "100%"}  h="100%" flexDirection="column" p={10}>
                 <QuestionLayout question={"Datos Publicos"} >
                   <Flex flexDirection="column">
                   <TextInputField name="PublicName" question="Nombre de Empresa"/>

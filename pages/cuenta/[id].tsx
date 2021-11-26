@@ -48,28 +48,31 @@ const Cuenta: NextPage = () => {
     }
     f()
     },[router])
-
-
-
     let curr_data = []
-    curr_data.push(stats.iCurrI4ThemesIA ? 1 : 0)
-    curr_data.push(stats.iCurrI4ThemesIot ? 1 : 0)
-    curr_data.push(stats.iCurrI4ThemesRA ? 1 : 0)
-    curr_data.push(stats.iCurrI4ThemesRobotica ? 1 : 0)
-    curr_data.push(stats.iCurrI4ThemesSecurity ? 1 : 0)
-    curr_data.push(stats.iCurrI4Themes3DP ? 1 : 0)
-    curr_data.push(stats.iCurrI4ThemesBigData ? 1 : 0)
-
     let want_data = []
-    want_data.push(stats.iImpI4ThemesIA ? 1 : 0)
-    want_data.push(stats.iImpI4ThemesIot ? 1 : 0)
-    want_data.push(stats.iImpI4ThemesRA ? 1 : 0)
-    want_data.push(stats.iImpI4ThemesRobotica ? 1 : 0)
-    want_data.push(stats.iImpI4ThemesSecurity ? 1 : 0)
-    want_data.push(stats.iImpI4Themes3DP ? 1 : 0)
-    want_data.push(stats.iImpI4ThemesBigData ? 1 : 0)
+    if (stats !== undefined){
+      
+      curr_data.push(stats.iCurrI4ThemesIA ? 1 : 0)
+      curr_data.push(stats.iCurrI4ThemesIot ? 1 : 0)
+      curr_data.push(stats.iCurrI4ThemesRA ? 1 : 0)
+      curr_data.push(stats.iCurrI4ThemesRobotica ? 1 : 0)
+      curr_data.push(stats.iCurrI4ThemesSecurity ? 1 : 0)
+      curr_data.push(stats.iCurrI4Themes3DP ? 1 : 0)
+      curr_data.push(stats.iCurrI4ThemesBigData ? 1 : 0)
+  
+      
+      want_data.push(stats.iImpI4ThemesIA ? 1 : 0)
+      want_data.push(stats.iImpI4ThemesIot ? 1 : 0)
+      want_data.push(stats.iImpI4ThemesRA ? 1 : 0)
+      want_data.push(stats.iImpI4ThemesRobotica ? 1 : 0)
+      want_data.push(stats.iImpI4ThemesSecurity ? 1 : 0)
+      want_data.push(stats.iImpI4Themes3DP ? 1 : 0)
+      want_data.push(stats.iImpI4ThemesBigData ? 1 : 0)
+  
+  
 
 
+    }
     const current = {
       labels: ['Inteligencia Artificial', 'IoT', 'Realidad Augmentada', 'Robotica', 'Ciberseguridad', 'Impresion 3D', "Big Data"],
       datasets: [
@@ -137,6 +140,8 @@ const Cuenta: NextPage = () => {
         </Flex>)}
         
       </Flex>
+      {stats == undefined? null : (
+        <Flex>
       <Text><b>Promedio de ventas por empleado: </b>{stats.iAvgSalesPerEmp}</Text>
       <Text><b>Numero de certificaciones: </b>{stats.iCertifications}</Text>
 
@@ -156,8 +161,8 @@ const Cuenta: NextPage = () => {
       <Text>{stats.iPerYearlyGrowth}</Text>
       <Text><b>Numero de empleados: </b>{stats.iQtyEmployeesNL}</Text>
       {/* <Text>{stats.iSectClient}</Text> */}
-      
-      
+      </Flex>
+      )}
     </Flex>
   )
 }

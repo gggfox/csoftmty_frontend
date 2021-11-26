@@ -1,11 +1,12 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { Text, Flex, Link, Box, Button, background, Menu, MenuButton, Portal, MenuList, MenuItem } from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
+import { Text, Flex, Link, Box, Button, Menu, MenuButton, Portal, MenuList, MenuItem } from '@chakra-ui/react';
 import logo from '../public/img/logo.png'
 import Image from 'next/image'
 import NextLink from 'next/link';
 import {useRouter } from 'next/router';
 import {useWindowSize} from '../hooks/useWindowSize'
 import axios from 'axios';
+import { AddIcon, ChevronDownIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon } from '@chakra-ui/icons';
 interface NavBarProps {
  
 }
@@ -159,8 +160,104 @@ export const NavBar : React.FC<NavBarProps> = ({ }) => {
                 </Link>
                 </NextLink> 
                 </Flex>)
-            :(<Flex  h="100%" >
-                Go home
+
+            :(<Flex  h="100%" mt="1.5em" mr="1em">
+                <Menu closeOnSelect={false}>
+                <MenuButton as={Button} colorScheme="orange">
+                <HamburgerIcon />
+  </MenuButton>
+                    <MenuList w="100vw" h="100vh">
+                        <MenuItem>
+                        <NextLink href="/">
+                        <Link color="black_dark" fontFamily="lato"  borderColor="orange_" borderBottomWidth={ path == '/' ? 5 : 0} mr={6}>
+                            <Flex h="100%" alignItems="center">Inicio</Flex>
+                        </Link>
+                    </NextLink> 
+                 
+                        </MenuItem>
+                        <MenuItem>
+                        <NextLink href="/datosNL" >
+                    <Link color="black_dark"  fontFamily="lato" borderColor="orange_" borderBottomWidth={ path == '/datosNL' ? 5 : 0}  mr={5}>
+                        <Flex  h="100%" alignItems="center">
+                        Datos N.L.
+                        </Flex>
+                </Link>
+                </NextLink> 
+                        </MenuItem>
+                     
+                        
+
+                    
+                        <MenuItem 
+                     
+                          bg = {active==0 ? 'orange' : ''}
+                          _hover={{"bg":"orange_"}}
+                          onClick={() => {active == 0 ? setActive(-1) : setActive(0)}}
+                        >
+                            DESAROLLO DE SOFTWARE
+                        </MenuItem>
+                        {active != 0 ? null : (categories[0].map((name,index) => (
+                            <NextLink href="/categorias/[name]/[cid]" as={`/categorias/${getLink(name)}/${categoryIds[0][index]}`}>
+                                <MenuItem id={name}  _hover={{"bg":"orange_"}}>-{name}</MenuItem>
+                            </NextLink>
+                        )))}
+
+                        <MenuItem 
+                      
+                        bg = {active==1 ? 'orange' : ''}
+                          _hover={{"bg":"orange_"}}
+                          onClick={() => {active == 1 ? setActive(-1) : setActive(1)}}
+                        >
+                            HARDWARE
+                        </MenuItem>
+                        {active != 1 ? null : (categories[1].map((name,index) => (
+                            <NextLink href="/categorias/[name]/[cid]" as={`/categorias/${getLink(name)}/${categoryIds[1][index]}`}>
+                                <MenuItem id={name} _hover={{"bg":"orange_"}}>-{name}</MenuItem>
+                            </NextLink>
+                        )))}
+
+                        <MenuItem 
+                   
+                        bg = {active==2 ? 'orange' : ''}
+                          _hover={{"bg":"orange_"}}
+                          onClick={()=> {active == 2 ? setActive(-1) : setActive(2)}}
+                        >
+                            SERVICIOS
+                        </MenuItem>
+                        {active != 2 ? null : (categories[2].map((name,index) => (
+                            <NextLink href="/categorias/[name]/[cid]" as={`/categorias/${getLink(name)}/${categoryIds[2][index]}`}>
+                                <MenuItem id={name} _hover={{"bg":"orange_"}}>-{name}</MenuItem>
+                            </NextLink>
+                        )))}
+
+                        <MenuItem 
+                   
+                        bg = {active==3 ? 'orange' : ''}
+                          _hover={{"bg":"orange_"}}
+                          onClick={()=>{active == 3 ? setActive(-1) : setActive(3)}}
+                        >
+                           TECNOLOGIA 4.0
+                        </MenuItem>
+                        {active != 3 ? null : (categories[3].map((name,index) => (
+                            <NextLink href="/categorias/[name]/[cid]" as={`/categorias/${getLink(name)}/${categoryIds[3][index]}`}>
+                                <MenuItem id={name} _hover={{"bg":"orange_"}}>-{name}</MenuItem>
+                            </NextLink>
+                        )))}
+                
+                     
+                        <MenuItem>
+                        <NextLink href={user_id===null?"/login":"/cuenta/[id]"} as={`/cuenta/${user_id}`}>
+                    <Link color="black_dark" fontFamily="lato" borderColor="orange_" borderBottomWidth={ path == '/cuenta/[id]' ? 5 : 0}  mr={6} >
+                        <Flex h="100%" alignItems="center" justifyContent="center">
+                            <Text>
+                                Mi cuenta
+                            </Text>
+                        </Flex>
+                </Link>
+                </NextLink> 
+                        </MenuItem>
+                    </MenuList>
+                </Menu>
             </Flex>
                 
             )}

@@ -7,14 +7,16 @@ import {Formik, Form} from 'formik'
 import { InputField } from '../components/InputField'
 import { SelectField } from '../components/SelectField'
 import axios from 'axios'
+import { useWindowSize } from '../hooks/useWindowSize'
 
 const Signup: NextPage = () => {
   const toast = useToast()
+  const size = useWindowSize()
   axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
   return (
     <Flex bg="white_dark" flexDirection="column" w="100vw">
       <NavBar></NavBar>
-      <Box m={20}/>
+      <Box m={size?.width as number >= 650 ? 20 : 0}/>
       <Formik 
         initialValues={{ name: "", phone: "", email: "", sector:"", business:"", role:"", password:"", confirmation:""}}
         onSubmit={async (values,{setErrors}) => {
@@ -76,7 +78,8 @@ const Signup: NextPage = () => {
             <Flex justifyContent="center" h="100%" bg="white_dark">
               
               <Form>
-              <Flex bg="gray_dark" justifyContent="center" alignItems="center" borderRadius="10px" w="40vw" h="100%" flexDirection="column" p={10}>
+              <Flex bg="gray_dark" justifyContent="center" alignItems="center" borderRadius="10px" w={size?.width as number >= 650 ? "60vw" : "100vw"} h="100%" flexDirection="column"
+               p={10} mt={size?.width as number >= 650 ? 0 : 10}>
                 <Box mt={8}>
                   <Heading color="white" as="b" m="6px">Registrate ahora</Heading>
                   <Text fontSize="x1" color="white" mb = "15px">Al crear tu cuenta podras navegar libremente.  {" "}
@@ -92,7 +95,7 @@ const Signup: NextPage = () => {
                   <InputField name="email" placeholder="ejemplo@gmial.com" label="Email"/>
                   <Box m={5}/>
 
-                 <SelectField name="sector" label="Sector de industria"/>
+                 <SelectField name="sector" label={size?.width as number >= 650 ? "Sector de industria" : "Industria"}/>
                 </Flex>
                 <Flex flexDirection="row" w="100%" m={2} justifyContent="center">
                   <InputField name="business" placeholder="Ejemplo S.A de C.V" label="Empresa"/>
