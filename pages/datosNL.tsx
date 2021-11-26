@@ -254,92 +254,102 @@ const DatosNL: NextPage = () => {
             >
               Datos Nuevo León
             </Heading>      
-    <Box w="50%">
-    <BarGraph 
-      title="¿Cuanto personal tienen las empresas en el estado de Nuevo Leon?" 
-      question_data={Q1 as [number]} 
-      labels={["0 - 50","51-100","101-200","201-500",">500"]} 
-    />
-    <BarGraph 
-      title="¿Cuáles fueron sus ingresos en el 2020?" 
-      question_data={Q2 as [number]} 
-      labels={["< 30 mdp", "De 30-60 mdp","De 60-120 mdp","De 120-300 mdp","> 300 mdp"]} 
-    />
-    <BarGraph 
-      title="¿Que porcentaje % creció en facturación tu empresa en el 2020 respecto al 2019?" 
-      question_data={Q3 as [number]} 
-      labels={["< 30 mdp", "De 30-60 mdp","De 60-120 mdp","De 120-300 mdp","> 300 mdp"]} 
-    />
-    <BarGraph 
-      title="¿Cuál es tu expectativa de crecimiento en facturación en este año?" 
-      question_data={Q4 as [number]} 
-      labels={["No crecerá","Creció entre 0-5 %","Creció entre 5-10%","Creció entre 10-15%","Creció más del 15%"]} 
-    />
-    <PieGraph 
-      title="¿De toda tu facturacion del año pasado que porcentaje fue de Tecnologias 4.0*?" 
-      question_data={[Q5,100 - Q5]} 
-      labels={["Tecnologias 4.0","Demás"]} 
-    />
-    <PieGraph 
-      title="¿De tu facturación del año pasado, qué porcentaje % fue de productos y/o servicios que lanzaste durante los ultimos 3 años?" 
-      question_data={[Q7,100 - Q7]} 
-      labels={["Productos y/o servicios que se lanzaron durante los ultimos 3 años","Demás"]} 
-    />
-    <PieGraph 
-      title="¿Qué porcentaje % de tu personal ocupado tiene alguna certificación tecnológica (Microsoft, PMP, Javam etc)?" 
-      question_data={[Q8,100 - Q8]} 
-      labels={["Personal con certificación tecnológica (Microsoft, PMP, Javam etc)","Demás"]} 
-    />
-    <PieGraph 
-      title="¿Què porcentaje % de tu facturación proviene de tus ventas realizadas fuera del país?" 
-      question_data={[Q9,100 - Q9]} 
-      labels={["Ventas realizadas fuera del país","Demás"]} 
-    />
-    <BarGraph 
-      title="¿Tu empresa tiene algún tipo de certificación?" 
-      question_data={Q10 as [number]}
-      labels={["CMMI 3","CMMI 5","MoProSoft","ISO","ISO 9001","Otra"]} 
-    />
-    <BarGraph 
-      title="¿En que sector se ubican la mayoria de tus clientes?" 
-      question_data={Q11 as [number]}
-      labels={["Salud","Fintech","Manufactura","Retail","Agrotech","Educacion","Turismo","Otro"]} 
-    />
-    <BarGraph 
-      title="De los temas que incluye la Industria 4.0, indica cuáles actualmente forman parte de tu agenda de trabajo" 
-      question_data={Q12 as [number]}
-      labels={[    "Big Data",
-      "Internet of Things (Iot)",
-      "Realidad Augmentada (AR)",
-      "Inteligencia Artificial",
-      "Seguridad Informatica",
-      "3D Printing",
-      "Robótica"]} 
-    />
-        <BarGraph 
-      title="De los temas que incluye la Industria 4.0, indica cuáles consideras más relevantes conocer para implementarlos en tu empresa"
-      question_data={Q14 as [number]}
-      labels={[    "Big Data",
-      "Internet of Things (Iot)",
-      "Realidad Augmentada (AR)",
-      "Inteligencia Artificial",
-      "Seguridad Informatica",
-      "3D Printing",
-      "Robótica"]} 
-    />
-
-
-
-    </Box>
-   <Box w="50%">
-
-
-    <PieGraph 
-      title="Porcentaje de algo" 
-      question_data={[50,50]} 
-      labels={["hombres","mujeres"]} 
-    />
-</Box>
+    <Flex justifyContent="center" width="35%" alignItems="center" alignSelf="center" marginBottom="3%">
+      <BarGraph 
+        title="¿Cuanto personal tienen las empresas en el estado de Nuevo Leon?" 
+        question_data={Q1 as [number]} 
+        labels={["0 - 50","51-100","101-200","201-500",">500"]} 
+      />
+    </Flex>
+    <Flex justifyContent="center" width="35%" alignItems="center" alignSelf="center" marginBottom="3%">
+      <BarGraph 
+        title="¿Cuáles fueron sus ingresos en el 2020?" 
+        question_data={Q2 as [number]} 
+        labels={["< 30 mdp", "De 30-60 mdp","De 60-120 mdp","De 120-300 mdp","> 300 mdp"]} 
+      />
+    </Flex>
+    <Flex justifyContent="center" width="35%" alignItems="center" alignSelf="center" marginBottom="3%">
+      <BarGraph 
+        title="¿Que porcentaje % creció en facturación tu empresa en el 2020 respecto al 2019?" 
+        question_data={Q3 as [number]} 
+        labels={["< 30 mdp", "De 30-60 mdp","De 60-120 mdp","De 120-300 mdp","> 300 mdp"]} 
+      />
+    </Flex>
+    <Flex justifyContent="center" width="35%" alignItems="center" alignSelf="center" marginBottom="3%">
+      <BarGraph 
+        title="¿Cuál es tu expectativa de crecimiento en facturación en este año?" 
+        question_data={Q4 as [number]} 
+        labels={["No crecerá","Creció entre 0-5 %","Creció entre 5-10%","Creció entre 10-15%","Creció más del 15%"]} 
+      />
+    </Flex>
+    <Flex justifyContent="center" width="35%" alignItems="center" alignSelf="center" marginBottom="3%">
+      <PieGraph 
+        title="¿De toda tu facturacion del año pasado que porcentaje fue de Tecnologias 4.0*?" 
+        question_data={[Q5,100 - Q5]} 
+        labels={["Tecnologias 4.0","Demás"]} 
+      />
+    </Flex>
+    <Flex justifyContent="center" width="35%" alignItems="center" alignSelf="center" marginBottom="3%">
+      <PieGraph 
+        title="¿De tu facturación del año pasado, qué porcentaje % fue de productos y/o servicios que lanzaste durante los ultimos 3 años?" 
+        question_data={[Q7,100 - Q7]} 
+        labels={["Productos y/o servicios que se lanzaron durante los ultimos 3 años","Demás"]} 
+      />
+    </Flex>
+    <Flex justifyContent="center" width="35%" alignItems="center" alignSelf="center" marginBottom="3%">
+      <PieGraph 
+        title="¿Qué porcentaje % de tu personal ocupado tiene alguna certificación tecnológica (Microsoft, PMP, Javam etc)?" 
+        question_data={[Q8,100 - Q8]} 
+        labels={["Personal con certificación tecnológica (Microsoft, PMP, Javam etc)","Demás"]} 
+      />
+    </Flex>
+    <Flex justifyContent="center" width="35%" alignItems="center" alignSelf="center" marginBottom="3%">
+      <PieGraph 
+        title="¿Què porcentaje % de tu facturación proviene de tus ventas realizadas fuera del país?" 
+        question_data={[Q9,100 - Q9]} 
+        labels={["Ventas realizadas fuera del país","Demás"]} 
+      />
+    </Flex>
+    <Flex justifyContent="center" width="35%" alignItems="center" alignSelf="center" marginBottom="3%">
+      <BarGraph 
+        title="¿Tu empresa tiene algún tipo de certificación?" 
+        question_data={Q10 as [number]}
+        labels={["CMMI 3","CMMI 5","MoProSoft","ISO","ISO 9001","Otra"]} 
+      />
+    </Flex>
+    <Flex justifyContent="center" width="35%" alignItems="center" alignSelf="center" marginBottom="3%">
+      <BarGraph 
+        title="¿En que sector se ubican la mayoria de tus clientes?" 
+        question_data={Q11 as [number]}
+        labels={["Salud","Fintech","Manufactura","Retail","Agrotech","Educacion","Turismo","Otro"]} 
+      />
+    </Flex>
+    <Flex justifyContent="center" width="35%" alignItems="center" alignSelf="center" marginBottom="3%">
+      <BarGraph 
+        title="De los temas que incluye la Industria 4.0, indica cuáles actualmente forman parte de tu agenda de trabajo" 
+        question_data={Q12 as [number]}
+        labels={[    "Big Data",
+        "Internet of Things (Iot)",
+        "Realidad Augmentada (AR)",
+        "Inteligencia Artificial",
+        "Seguridad Informatica",
+        "3D Printing",
+        "Robótica"]} 
+      />
+    </Flex>
+    <Flex justifyContent="center" width="35%" alignItems="center" alignSelf="center" marginBottom="3%">
+          <BarGraph 
+        title="De los temas que incluye la Industria 4.0, indica cuáles consideras más relevantes conocer para implementarlos en tu empresa"
+        question_data={Q14 as [number]}
+        labels={[    "Big Data",
+        "Internet of Things (Iot)",
+        "Realidad Augmentada (AR)",
+        "Inteligencia Artificial",
+        "Seguridad Informatica",
+        "3D Printing",
+        "Robótica"]} 
+      />
+    </Flex>
         <Footer/>
     </Flex>
   )

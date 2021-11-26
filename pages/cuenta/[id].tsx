@@ -126,44 +126,54 @@ const Cuenta: NextPage = () => {
         </Flex>)}
         
       </Flex>
-      <Text><b>Promedio de ventas por empleado: </b>{stats.iAvgSalesPerEmp}</Text>
-      <Text><b>Numero de certificaciones: </b>{stats.iCertifications}</Text>
-
-      <Flex w="50%">
-      <Radar data={current} />
+      <Flex justifyContent="center" alignItems="center" alignSelf="center" flexDirection="column" marginBottom="5%" backgroundColor="gray_dark" padding="5%" borderRadius="5%" textColor="white">
+        <Text><b>Promedio de ventas por empleado: </b>{stats.iAvgSalesPerEmp}</Text>
+        <Text><b>Numero de certificaciones: </b>{stats.iCertifications}</Text>
+        <Text><b>Clientes Importantes:</b> {stats.iImportantCustumers}</Text>
+        <Text><b>Ventas Annuales:</b> {stats.iNumYearlySales}</Text>
+        <Text><b>Crecimiento Anunual: </b>{stats.iNumYearlySalesGrowth}</Text>
+        <Text><b>Numero de empleados: </b>{stats.iQtyEmployeesNL}</Text>
       </Flex>
 
+      <Flex w="50%" justifyContent="center" width="30%" alignItems="center" alignSelf="center">
+        <Radar data={current} />
+      </Flex>
 
-
-      <Text><b>Clientes Importantes:</b> {stats.iImportantCustumers}</Text>
-      <Text><b>Ventas Annuales:</b> {stats.iNumYearlySales}</Text>
-      <Text><b>Crecimiento Anunual: </b>{stats.iNumYearlySalesGrowth}</Text>
-      <PieGraph 
-        title="Porcentaje % de facturación de ventas realizadas fuera del país" 
-        question_data={[stats.iPerInternationalSales,100 - stats.iPerInternationalSales]} 
-        labels={["Fuera del pais","Dentro del país"]} 
-      />
-      <PieGraph 
-        title="Porcentaje % de facturacion del año pasado que fueron de productos y/o servicios que lanzaste durante los ultimos 3 años" 
-        question_data={[stats.iPerSales3Year,100 - stats.iPerSales3Year]} 
-        labels={["Productos y/o servicios que lanzaste durante los ultimos 3 años","Demás"]} 
-      />
-      <PieGraph 
-        title="Porcentaje % de personal con alguna certificación tecnológica" 
-        question_data={[stats.iPerSalesGrowth,100 - stats.iPerSalesGrowth]} 
-        labels={["Personal con alguna certificación tecnológica","Demás"]} 
-      />
-      <PieGraph 
-        title="Porcentaje % de facturación de ventas realizadas el año pasado de Tecnologias 4.0" 
-        question_data={[stats.iPerTec4Sales,100 - stats.iPerTec4Sales]} 
-        labels={["Tecnologias 4.0","Demás"]} 
-      />
-      <PieGraph 
-        title="Porcentaje % de crecimiento en facturación de la empresa del 2020 respecto al 2019" 
-        question_data={[stats.iPerYearlyGrowth,100 - stats.iPerYearlyGrowth]} 
-        labels={["Crecimiento",""]} 
-      />
-      <Text><b>Numero de empleados: </b>{stats.iQtyEmployeesNL}</Text>
+      <Flex justifyContent="center" width="30%" alignItems="center" alignSelf="center" marginBottom="3%">
+        <PieGraph 
+          title="Porcentaje % de facturación de ventas realizadas fuera del país" 
+          question_data={[stats.iPerInternationalSales,100 - stats.iPerInternationalSales]} 
+          labels={["Fuera del pais","Dentro del país"]} 
+        />
+      </Flex>
+      <Flex justifyContent="center" width="30%" alignItems="center" alignSelf="center" marginBottom="3%">
+        <PieGraph 
+          title="Porcentaje % de facturacion del año pasado que fueron de productos y/o servicios que lanzaste durante los ultimos 3 años" 
+          question_data={[stats.iPerSales3Year,100 - stats.iPerSales3Year]} 
+          labels={["Productos y/o servicios que lanzaste durante los ultimos 3 años","Demás"]} 
+        />
+      </Flex>
+      <Flex justifyContent="center" width="30%" alignItems="center" alignSelf="center" marginBottom="3%">
+        <PieGraph 
+          title="Porcentaje % de personal con alguna certificación tecnológica" 
+          question_data={[stats.iPerSalesGrowth,100 - stats.iPerSalesGrowth]} 
+          labels={["Personal con alguna certificación tecnológica","Demás"]} 
+        />
+      </Flex>
+      <Flex justifyContent="center" width="30%" alignItems="center" alignSelf="center" marginBottom="3%">
+        <PieGraph 
+          title="Porcentaje % de facturación de ventas realizadas el año pasado de Tecnologias 4.0" 
+          question_data={[stats.iPerTec4Sales,100 - stats.iPerTec4Sales]} 
+          labels={["Tecnologias 4.0","Demás"]} 
+        />
+      </Flex>
+      <Flex justifyContent="center" width="30%" alignItems="center" alignSelf="center" marginBottom="3%">
+        <PieGraph 
+          title="Porcentaje % de crecimiento en facturación de la empresa del 2020 respecto al 2019" 
+          question_data={[stats.iPerYearlyGrowth,100 - stats.iPerYearlyGrowth]} 
+          labels={["Crecimiento",""]} 
+        />
+      </Flex>
       {/* <Text>{stats.iSectClient}</Text> */}
       
       
