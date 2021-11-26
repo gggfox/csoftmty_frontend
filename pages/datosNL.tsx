@@ -43,24 +43,6 @@ const DatosNL: NextPage = () => {
         `${process.env.base_url}/users/statistics`,
           {headers: { Authorization: `Bearer ${token}`}}
       )
-<<<<<<< HEAD
-      console.log("Data",data)
-    const q1 = data['enterpriseStats'][0]["Question1"]["Q1"]
-    let id,count;
-    let arr = [0,0,0,0,0]
-    for (let i in q1){
-        id = q1[i]["_id"]
-        count = q1[i]["Count"]
-        arr[id-1] = count
-    }
-    setQ1(arr);
-
-
-    //console.log("Q1",Q1)
-    //console.log('id',data['enterpriseStats'][0]["Question1"]["Q1"][0]["_id"])
-    //console.log('count',data['enterpriseStats'][0]["Question1"]["Q1"][0]["Count"])
-   
-=======
       const q1 = data['enterpriseStats'][0]["Question1"]["Q1"]
       let id,count;
       let arr = [0,0,0,0,0]
@@ -194,7 +176,6 @@ const DatosNL: NextPage = () => {
       
 
 
->>>>>>> 506d38a4e7ad4fe633d1e6d0c7f9bd47b07533b6
       }
     }
      f()

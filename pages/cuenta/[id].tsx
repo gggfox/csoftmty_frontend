@@ -155,7 +155,7 @@ const Cuenta: NextPage = () => {
       <Text>{stats.iPerTec4Sales}</Text>
       <Text>{stats.iPerYearlyGrowth}</Text>
       <Text><b>Numero de empleados: </b>{stats.iQtyEmployeesNL}</Text>
-      <Text>{stats.iSectClient}</Text>
+      {/* <Text>{stats.iSectClient}</Text> */}
       
       
     </Flex>
