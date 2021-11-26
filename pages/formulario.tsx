@@ -31,7 +31,7 @@ const Formulario: NextPage = () => {
 
       <Formik 
         initialValues={
-          {Q01:"0", Q02:"0", Q03:"0", Q05:0, Q06:0, Q07:0,
+          {name:"", instagram:"", facebook:"", twitter:"", linkedin:"", address:"", phone:"", email:"", products:"", services:"", Q01:"0", Q02:"0", Q03:"0", Q04:"0",Q05:0, Q06:0, Q07:0,
            Q08:0, Q09:0, Q10:"0", Q11:"0", Q12:null, Q13:"", Q14:null}
         }
         onSubmit={async (values,{setErrors}) => {
@@ -44,33 +44,33 @@ const Formulario: NextPage = () => {
               headers: { Authorization: `Bearer ${token}`}
             }
 
-            const {data} = await axios.post(
+            const {data} = await axios.put(
               `${process.env.base_url}/users/enterprise`,
-            {"sPhone": "818281818281",
+            {
             "oPublicData": {
-                  "sPublicName": "Sofex",
-                  "sPublicInstagram": "sofex.tech",
-                  "sPublicFacebook": "sofex",
-                  "sPublicTwitter": "sofex",
-                  "sPublicLinkedin": "sofex",
-                  "sPublicAddress": "Sofex Address",
-                  "sPublicPhone": "Sofex Phone",
-                  "sPublicEmail": "contacto@sofex.com.mx",
-                  "sPublicProductsDescription": "sofex products desc",
-                  "sPublicServicesDescription": "sofex services desc"
+                  "sPublicName": values.name,
+                  "sPublicInstagram": values.instagram,
+                  "sPublicFacebook": values.facebook,
+                  "sPublicTwitter": values.twitter,
+                  "sPublicLinkedin": values.linkedin,
+                  "sPublicAddress": values.address,
+                  "sPublicPhone": values.phone,
+                  "sPublicEmail": values.email,
+                  "sPublicProductsDescription": values.products,
+                  "sPublicServicesDescription": values.services
               },
             "oPrivateData": {
-              "iQtyEmployeesNL": 2,
-              "iNumYearlySales": 2,
-              "iNumYearlySalesGrowth": 2,
-              "iPerYearlyGrowth": 2,
-              "iPerTec4Sales": 2,
-              "iAvgSalesPerEmp": 2,
-              "iPerSales3Year": 3,
-              "iPerSalesGrowth": 1,
-              "iPerInternationalSales": 2,
-              "iCertifications": 3,
-              "iSectClient": 1,
+              "iQtyEmployeesNL": values.Q01,
+              "iNumYearlySales": values.Q02,
+              "iNumYearlySalesGrowth": values.Q03,
+              "iPerYearlyGrowth": values.Q04,
+              "iPerTec4Sales": values.Q05,
+              "iAvgSalesPerEmp": values.Q06,
+              "iPerSales3Year": values.Q07,
+              "iPerSalesGrowth": values.Q08,
+              "iPerInternationalSales": values.Q09,
+              "iCertifications": values.Q10,
+              "iSectClient": values.Q11,
               "iCurrI4ThemesBigData": true,
               "iCurrI4ThemesIot": true,
               "iCurrI4ThemesRA": true,
@@ -78,7 +78,7 @@ const Formulario: NextPage = () => {
               "iCurrI4ThemesSecurity": true,
               "iCurrI4Themes3DP": true,
               "iCurrI4ThemesRobotica": false,
-              "iImportantCustumers": "Roger String",
+              "iImportantCustumers": values.Q13,
               "iImpI4ThemesBigData": true,
               "iImpI4ThemesIot": true,
               "iImpI4ThemesRA": true,
@@ -87,7 +87,7 @@ const Formulario: NextPage = () => {
               "iImpI4Themes3DP": true,
               "iImpI4ThemesRobotica": true
         }},config)
-            console.log(data)
+            console.log("DATA",data)
 
             toast({
               title: "Felicidades",
@@ -102,7 +102,7 @@ const Formulario: NextPage = () => {
               if(axios.isAxiosError(err)){
                 const msg = err.response?.data.message             
                 toast({
-                title: "La cuenta no pudo ser creada.",
+                title: "La encuesta no se pudo enviar.",
                 description: `${msg}`,
                 status: "warning",
                 duration: 9000,
@@ -126,20 +126,20 @@ const Formulario: NextPage = () => {
             <Form>
 
               <Flex alignItems="center" w="50%" h="100%" flexDirection="column" p={10}>
-                <QuestionLayout question={"Datos Publicos"} flex="column">
-
+                <QuestionLayout question={"Datos Publicos"} >
+                  <Flex flexDirection="column">
                   <TextInputField name="PublicName" question="Nombre de Empresa"/>
-                  <TextInputField name="Instagram" question="Nombre de Empresa"/>
-                  <TextInputField name="Facebook" question="Nombre de Empresa"/>
-                  <TextInputField name="Twitter" question="Nombre de Empresa"/>
-                  <TextInputField name="Linkedin" question="Nombre de Empresa"/>
-                  <TextInputField name="Address" question="Nombre de Empresa"/>
-                  <TextInputField name="Phone" question="Nombre de Empresa"/>
-                  <TextInputField name="Email" question="Nombre de Empresa"/>
-                  <TextInputField name="ProductsDescription" question="Nombre de Empresa"/>
-                  <TextInputField name="ServicesDescription" question="Nombre de Empresa"/>
+                  <TextInputField name="Instagram" question="Instagram"/>
+                  <TextInputField name="Facebook" question="Facebook"/>
+                  <TextInputField name="Twitter" question="Twitter"/>
+                  <TextInputField name="Linkedin" question="Linkedin"/>
+                  <TextInputField name="Address" question="Dirección"/>
+                  <TextInputField name="Phone" question="Tel."/>
+                  <TextInputField name="Email" question="Email"/>
+                  <TextInputField name="ProductsDescription" question="Descripcion de Productos"/>
+                  <TextInputField name="ServicesDescription" question="Descripcion de Servicios"/></Flex>
                 </QuestionLayout>
-
+             
 
                 <RadioInputField
                   name="Q01"

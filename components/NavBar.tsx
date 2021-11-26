@@ -58,15 +58,7 @@ export const NavBar : React.FC<NavBarProps> = ({ }) => {
     }
 
     f()
-    // const arr = f()
-    // for(let x in arr){
-    //     console.log(x)
-    // }
     },[])
-
-                   
-       
-
 
                  
 
@@ -156,8 +148,8 @@ export const NavBar : React.FC<NavBarProps> = ({ }) => {
                     </MenuList>
                 </Portal>
                 </Menu>
-
-                <NextLink href="/cuenta/[id]" as={`/cuenta/${user_id}`}>
+                
+                <NextLink href={user_id===null?"/login":"/cuenta/[id]"} as={`/cuenta/${user_id}`}>
                     <Link color="black_dark" fontFamily="lato" borderColor="orange_" borderBottomWidth={ path == '/cuenta/[id]' ? 5 : 0}  mr={6} >
                         <Flex h="100%" alignItems="center" justifyContent="center">
                             <Text>

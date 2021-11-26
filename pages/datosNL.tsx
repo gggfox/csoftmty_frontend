@@ -11,6 +11,7 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 import { BarGraph } from '../components/BarGraph'
 import { PieGraph } from '../components/PieGraph'
+import { useEffectX } from "use-effect-x";
 
 const DatosNL: NextPage = () => {
 
@@ -31,17 +32,18 @@ const DatosNL: NextPage = () => {
   const [Q12,setQ12] = useState([0,0,0,0,0,0,0])
   const [Q14,setQ14] = useState([0,0,0,0,0,0,0])
 
-
     useEffect(() => {
     const f = async () => {
       const token = window.localStorage.getItem('token')
-     
+       console.log("hello",token)
+
 
       if (token) {
       const {data} = await axios.get(
         `${process.env.base_url}/users/statistics`,
           {headers: { Authorization: `Bearer ${token}`}}
       )
+      console.log("Data",data)
     const q1 = data['enterpriseStats'][0]["Question1"]["Q1"]
     let id,count;
     let arr = [0,0,0,0,0]
@@ -53,13 +55,13 @@ const DatosNL: NextPage = () => {
     setQ1(arr);
 
 
-    console.log("Q1",Q1)
+    //console.log("Q1",Q1)
     //console.log('id',data['enterpriseStats'][0]["Question1"]["Q1"][0]["_id"])
     //console.log('count',data['enterpriseStats'][0]["Question1"]["Q1"][0]["Count"])
    
       }
     }
-    f()
+     f()
     },[router])
 
 
