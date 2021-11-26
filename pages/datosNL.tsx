@@ -254,7 +254,7 @@ const DatosNL: NextPage = () => {
             >
               Datos Nuevo León
             </Heading>      
-    <Box w="50%">
+    <Flex flexDirection={size.width as number >= 650 ? "row":"column"} w="100%"alignItems="center" mx="1em" flexWrap="wrap" justifyContent="center">
     <BarGraph 
       title="¿Cuanto personal tienen las empresas en el estado de Nuevo Leon?" 
       question_data={Q1 as [number]} 
@@ -276,24 +276,24 @@ const DatosNL: NextPage = () => {
       labels={["No crecerá","Creció entre 0-5 %","Creció entre 5-10%","Creció entre 10-15%","Creció más del 15%"]} 
     />
     <PieGraph 
-      title="¿De toda tu facturacion del año pasado que porcentaje fue de Tecnologias 4.0*?" 
+      title={["¿De toda tu facturacion del año ","pasado que porcentaje fue de Tecnologias 4.0*?" ]}
       question_data={[Q5,100 - Q5]} 
       labels={["Tecnologias 4.0","Demás"]} 
     />
     <PieGraph 
-      title="¿De tu facturación del año pasado, qué porcentaje % fue de productos y/o servicios que lanzaste durante los ultimos 3 años?" 
+      title={["¿De tu facturación del año pasado, qué porcentaje % fue de","productos y/o servicios que lanzaste durante los ultimos 3 años?" ]}
       question_data={[Q7,100 - Q7]} 
-      labels={["Productos y/o servicios que se lanzaron durante los ultimos 3 años","Demás"]} 
+      labels={["Productos recientes","Demás"]} 
     />
     <PieGraph 
-      title="¿Qué porcentaje % de tu personal ocupado tiene alguna certificación tecnológica (Microsoft, PMP, Javam etc)?" 
+      title={["¿Qué porcentaje % de tu personal ocupado tiene alguna"," certificación tecnológica (Microsoft, PMP, Javam etc)?" ]}
       question_data={[Q8,100 - Q8]} 
-      labels={["Personal con certificación tecnológica (Microsoft, PMP, Javam etc)","Demás"]} 
+      labels={["Personal con certificación","Demás"]} 
     />
     <PieGraph 
-      title="¿Què porcentaje % de tu facturación proviene de tus ventas realizadas fuera del país?" 
+      title={["¿Què porcentaje % de tu facturación proviene"," de tus ventas realizadas fuera del país?"]} 
       question_data={[Q9,100 - Q9]} 
-      labels={["Ventas realizadas fuera del país","Demás"]} 
+      labels={["Ventas en el extranjero","Demás"]} 
     />
     <BarGraph 
       title="¿Tu empresa tiene algún tipo de certificación?" 
@@ -306,22 +306,25 @@ const DatosNL: NextPage = () => {
       labels={["Salud","Fintech","Manufactura","Retail","Agrotech","Educacion","Turismo","Otro"]} 
     />
     <BarGraph 
-      title="De los temas que incluye la Industria 4.0, indica cuáles actualmente forman parte de tu agenda de trabajo" 
+      title={["De los temas que incluye la Industria 4.0,"," indica cuáles actualmente forman parte de tu agenda de trabajo" ]}
       question_data={Q12 as [number]}
       labels={[    "Big Data",
       "Internet of Things (Iot)",
-      "Realidad Augmentada (AR)",
+      "Realidad Augmentada",
       "Inteligencia Artificial",
       "Seguridad Informatica",
       "3D Printing",
       "Robótica"]} 
     />
         <BarGraph 
-      title="De los temas que incluye la Industria 4.0, indica cuáles consideras más relevantes conocer para implementarlos en tu empresa"
+      title={
+        ["De los temas que incluye la Industria 4.0, indica cuáles consideras", 
+         " más relevantes conocer para implementarlos en tu empresa"]
+      }
       question_data={Q14 as [number]}
       labels={[    "Big Data",
       "Internet of Things (Iot)",
-      "Realidad Augmentada (AR)",
+      "Realidad Augmentada",
       "Inteligencia Artificial",
       "Seguridad Informatica",
       "3D Printing",
@@ -330,15 +333,10 @@ const DatosNL: NextPage = () => {
 
 
 
-    </Box>
+    </Flex>
    <Box w="50%">
 
 
-    <PieGraph 
-      title="Porcentaje de algo" 
-      question_data={[50,50]} 
-      labels={["hombres","mujeres"]} 
-    />
 </Box>
         <Footer/>
     </Flex>

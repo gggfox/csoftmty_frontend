@@ -33,11 +33,11 @@ export const TarjetaEmpresa : React.FC<TarjetaProps & BoxProps> = ({ details = t
                 { !details 
                   ? "" 
                   : (<NextLink href="/cuenta/[id]" as={`/cuenta/${businessId}`}>
-                        <Flex h="100%" alignItems="center" justifyContent="center">
+                     
                             <Text>
-                                <Button colorScheme="orange" backgroundColor="orange_" mt={4} mb={2}>Ver Detalles</Button>
+                                <Button colorScheme="orange" backgroundColor="orange_" my={4}>Ver Detalles</Button>
                             </Text>
-                        </Flex>
+                        
                 </NextLink> )
                 }
                 

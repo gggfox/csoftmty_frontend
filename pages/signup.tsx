@@ -67,12 +67,6 @@ const Signup: NextPage = () => {
 
             }}
           
-
-        //   if(response) {
-        //     //setErrors(toErrorMap(response));
-        // }else if (response){
-        //     //router.push('/');
-        // }
         }}>
           {({isSubmitting}) => (
             <Flex justifyContent="center" h="100%" bg="white_dark">
@@ -83,7 +77,7 @@ const Signup: NextPage = () => {
                 <Box mt={8}>
                   <Heading color="white" as="b" m="6px">Registrate ahora</Heading>
                   <Text fontSize="x1" color="white" mb = "15px">Al crear tu cuenta podras navegar libremente.  {" "}
-                    <Link size ="sm" color="cornflowerblue" href="#">   Beneficios </Link>
+                    {/* <Link size ="sm" color="cornflowerblue" href="#">   Beneficios </Link> */}
                   </Text>
                 </Box>
                 <Flex flexDirection="row" w="100%" m={2} justifyContent="center">

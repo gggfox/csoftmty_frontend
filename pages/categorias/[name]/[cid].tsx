@@ -63,7 +63,7 @@ const Categoria: NextPage = () => {
   
 
         </Flex>
-        <Divider/>
+     
    
       </Flex>
 
