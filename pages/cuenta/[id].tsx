@@ -110,8 +110,8 @@ const Cuenta: NextPage = () => {
 
             <NextLink href="/formulario">
             <Button 
-            bg="gray_dark" 
-            color="white" 
+            bg="orange_" 
+            color="white_dark"
             w={isDesktop ? "10em": "15em"} 
             py="4%" 
             mr="10px" 
@@ -122,18 +122,6 @@ const Cuenta: NextPage = () => {
           >Editar Datos</Button>
             
               </NextLink> 
-              
-          <Button 
-            w={isDesktop ? "10em": "15em"}             py="4%" 
-            mr="10px" 
-            bg="orange_" 
-            color="white_dark"
-            mb="10px"
-            _hover={{"opacity":"0.5"}}
-            borderRadius="2px"
-            fontSize="18px">
-              <Text fontWeight="bold">Editar Cuenta</Text>
-            </Button>
             
         </Flex>)}
         
