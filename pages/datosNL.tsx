@@ -291,9 +291,9 @@ const DatosNL: NextPage = () => {
       labels={["Personal con certificación tecnológica (Microsoft, PMP, Javam etc)","Demás"]} 
     />
     <PieGraph 
-      title="¿Què porcentaje % de tu facturación proviene de tus ventas realizadas fuera del pais?" 
+      title="¿Què porcentaje % de tu facturación proviene de tus ventas realizadas fuera del país?" 
       question_data={[Q9,100 - Q9]} 
-      labels={["Ventas realizadas fuera del pais","Demás"]} 
+      labels={["Ventas realizadas fuera del país","Demás"]} 
     />
     <BarGraph 
       title="¿Tu empresa tiene algún tipo de certificación?" 

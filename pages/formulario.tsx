@@ -191,7 +191,7 @@ const Formulario: NextPage = () => {
 
                 <IntegerInputField 
                   name="Q09"
-                  question="9 - ¿Què porcentaje % de tu facturación proviene de tus ventas realizadas fuera del pais?"
+                  question="9 - ¿Què porcentaje % de tu facturación proviene de tus ventas realizadas fuera del país?"
                   min={0} max={100}
                 />
 
