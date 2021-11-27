@@ -226,7 +226,7 @@ const DatosNL: NextPage = () => {
               textShadow="2px 1px black"
               mb={10}
             >
-              Crecimiento en la industria TIC de Nuevo León
+              Datos de la industria TIC de Nuevo León
             </Heading>  
               <Button 
                 backgroundColor="orange_" 
