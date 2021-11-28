@@ -3,15 +3,13 @@ import type { NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import { NavBar } from '../components/NavBar'
 import { Footer } from '../components/Footer'
-import mty from '../public/img/mty.jpg'
+import mty from '../public/img/mty-opt.jpg'
 import Image from 'next/image'
 import { useWindowSize } from '../hooks/useWindowSize'
-import { Bar, Pie } from 'react-chartjs-2'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import { BarGraph } from '../components/BarGraph'
 import { PieGraph } from '../components/PieGraph'
-import { useEffectX } from "use-effect-x";
 
 const DatosNL: NextPage = () => {
 
@@ -226,19 +224,9 @@ const DatosNL: NextPage = () => {
               textShadow="2px 1px black"
               mb={10}
             >
-              Crecimiento en la industria TIC de Nuevo León
+              Datos de la industria TIC de Nuevo León
             </Heading>  
-              <Button 
-                backgroundColor="orange_" 
-                borderRadius={0} 
-                borderWidth={0} 
-                py={8}
-                px={12} 
-                color="white_light" 
-                _hover={{color:"gray_dark", backgroundColor:"white_light", borderColor:"white_light"}}
-              >
-                Ver reporte
-              </Button>
+
             </Flex>
           </GridItem>
 
@@ -256,7 +244,7 @@ const DatosNL: NextPage = () => {
             </Heading>      
     <Flex flexDirection={size.width as number >= 650 ? "row":"column"} w="100%"alignItems="center" mx="1em" flexWrap="wrap" justifyContent="center">
     <BarGraph 
-      title="¿Cuanto personal tienen las empresas en el estado de Nuevo Leon?" 
+      title="¿Cuánto personal tienen las empresas en el estado de Nuevo León?" 
       question_data={Q1 as [number]} 
       labels={["0 - 50","51-100","101-200","201-500",">500"]} 
     />
@@ -266,7 +254,7 @@ const DatosNL: NextPage = () => {
       labels={["< 30 mdp", "De 30-60 mdp","De 60-120 mdp","De 120-300 mdp","> 300 mdp"]} 
     />
     <BarGraph 
-      title="¿Que porcentaje % creció en facturación tu empresa en el 2020 respecto al 2019?" 
+      title="¿Qué porcentaje % creció en facturación tu empresa en el 2020 respecto al 2019?" 
       question_data={Q3 as [number]} 
       labels={["< 30 mdp", "De 30-60 mdp","De 60-120 mdp","De 120-300 mdp","> 300 mdp"]} 
     />
@@ -276,22 +264,22 @@ const DatosNL: NextPage = () => {
       labels={["No crecerá","Creció entre 0-5 %","Creció entre 5-10%","Creció entre 10-15%","Creció más del 15%"]} 
     />
     <PieGraph 
-      title={["¿De toda tu facturacion del año ","pasado que porcentaje fue de Tecnologias 4.0*?" ]}
+      title={["¿De toda tu facturación del año ","pasado que porcentaje fue de Tecnologías 4.0?" ]}
       question_data={[Q5,100 - Q5]} 
       labels={["Tecnologias 4.0","Demás"]} 
     />
     <PieGraph 
-      title={["¿De tu facturación del año pasado, qué porcentaje % fue de","productos y/o servicios que lanzaste durante los ultimos 3 años?" ]}
+      title={["¿De tu facturación del año pasado, qué porcentaje % fue de","productos y/o servicios que lanzaste durante los últimos 3 años?" ]}
       question_data={[Q7,100 - Q7]} 
       labels={["Productos recientes","Demás"]} 
     />
     <PieGraph 
-      title={["¿Qué porcentaje % de tu personal ocupado tiene alguna"," certificación tecnológica (Microsoft, PMP, Javam etc)?" ]}
+      title={["¿Qué porcentaje % de tu personal ocupado tiene alguna"," certificación tecnológica (Microsoft, PMP, Java etc)?" ]}
       question_data={[Q8,100 - Q8]} 
       labels={["Personal con certificación","Demás"]} 
     />
     <PieGraph 
-      title={["¿Què porcentaje % de tu facturación proviene"," de tus ventas realizadas fuera del país?"]} 
+      title={["¿Qué porcentaje % de tu facturación proviene"," de tus ventas realizadas fuera del país?"]} 
       question_data={[Q9,100 - Q9]} 
       labels={["Ventas en el extranjero","Demás"]} 
     />
@@ -301,7 +289,7 @@ const DatosNL: NextPage = () => {
       labels={["CMMI 3","CMMI 5","MoProSoft","ISO","ISO 9001","Otra"]} 
     />
     <BarGraph 
-      title="¿En que sector se ubican la mayoria de tus clientes?" 
+      title="¿En qué sector se ubican la mayoría de tus clientes?" 
       question_data={Q11 as [number]}
       labels={["Salud","Fintech","Manufactura","Retail","Agrotech","Educacion","Turismo","Otro"]} 
     />

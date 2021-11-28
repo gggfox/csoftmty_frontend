@@ -18,7 +18,7 @@ const Signup: NextPage = () => {
       <NavBar></NavBar>
       <Box m={size?.width as number >= 650 ? 20 : 0}/>
       <Formik 
-        initialValues={{ name: "", phone: "", email: "", sector:"", business:"", role:"", password:"", confirmation:""}}
+        initialValues={{ name: "", phone: "", email: "", sector:"", business:"", role:"", password:"", category:"", confirmation:""}}
         onSubmit={async (values,{setErrors}) => {
           console.log(values)
        
@@ -31,7 +31,10 @@ const Signup: NextPage = () => {
               {
                 sName: values.name,
                 sEmail: values.email,
-                sPassword: values.password
+                sPassword: values.password,
+                sPhone: values.phone,
+                sRole: values.role,
+                sCategoryId: values.sector
               })
               console.log(data)
 
@@ -97,9 +100,9 @@ const Signup: NextPage = () => {
                   <InputField name="role" placeholder="Gerente" label="Puesto"/>
                 </Flex>
                 <Flex flexDirection="row" w="100%" m={2} justifyContent="center">
-                  <InputField name="password" placeholder="mas de 8 caracteres" label="Contraseña"/>
+                  <InputField name="password" type="password" placeholder="mas de 8 caracteres" label="Contraseña"/>
                   <Box m={5}/>
-                  <InputField name="confirmation" placeholder="tiene que ser igual a contraseña" label="Confirmacion"/>
+                  <InputField name="confirmation" type="password" placeholder="tiene que ser igual a contraseña" label="Confirmacion"/>
                 </Flex>
                 
                 <Button 

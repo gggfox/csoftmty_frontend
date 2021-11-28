@@ -28,6 +28,7 @@ export const NavBar : React.FC<NavBarProps> = ({ }) => {
     let user_id:any = ''
     try{
         user_id = localStorage?.getItem('myId')
+        console.log("user id",user_id)
     }catch{
         user_id = -1
     }
@@ -150,15 +151,26 @@ export const NavBar : React.FC<NavBarProps> = ({ }) => {
                 </Portal>
                 </Menu>
                 
-                <NextLink href={user_id===null?"/login":"/cuenta/[id]"} as={`/cuenta/${user_id}`}>
-                    <Link color="black_dark" fontFamily="lato" borderColor="orange_" borderBottomWidth={ path == '/cuenta/[id]' ? 5 : 0}  mr={6} >
-                        <Flex h="100%" alignItems="center" justifyContent="center">
-                            <Text>
-                                Mi cuenta
-                            </Text>
-                        </Flex>
-                </Link>
-                </NextLink> 
+                {(user_id==null || user_id=="" )? (
+                        <NextLink href="/login">
+                        <Link color="black_dark" fontFamily="lato" borderColor="orange_" borderBottomWidth= {0}  mr={6} >
+                            <Flex h="100%" alignItems="center" justifyContent="center">
+                                <Text>
+                                    Mi cuenta
+                                </Text>
+                            </Flex>
+                        </Link>
+                    </NextLink> 
+                        ) : (
+                            <NextLink href="/cuenta/[id]" as={`/cuenta/${user_id}`}>
+                            <Link color="black_dark" fontFamily="lato" borderColor="orange_" borderBottomWidth={ path == '/cuenta/[id]' ? 5 : 0}  mr={6} >
+                                <Flex h="100%" alignItems="center" justifyContent="center">
+                                    <Text>
+                                        Mi cuenta
+                                    </Text>
+                                </Flex>
+                            </Link>
+                </NextLink> )}
                 </Flex>)
 
             :(<Flex  h="100%" mt="1.5em" mr="1em">
@@ -246,15 +258,29 @@ export const NavBar : React.FC<NavBarProps> = ({ }) => {
                 
                      
                         <MenuItem>
-                        <NextLink href={user_id===null?"/login":"/cuenta/[id]"} as={`/cuenta/${user_id}`}>
-                    <Link color="black_dark" fontFamily="lato" borderColor="orange_" borderBottomWidth={ path == '/cuenta/[id]' ? 5 : 0}  mr={6} >
-                        <Flex h="100%" alignItems="center" justifyContent="center">
-                            <Text>
-                                Mi cuenta
-                            </Text>
-                        </Flex>
-                </Link>
-                </NextLink> 
+                        {(user_id==null || user_id=="") ? (
+                        <NextLink href="/login">
+                        <Link color="black_dark" fontFamily="lato" borderColor="orange_" borderBottomWidth={ path == '/cuenta/[id]' ? 5 : 0}  mr={6} >
+                            <Flex h="100%" alignItems="center" justifyContent="center">
+                                <Text>
+                                    Mi cuenta
+                                </Text>
+                            </Flex>
+                        </Link>
+                    </NextLink> 
+                        ) : (
+                            <NextLink href="/cuenta/[id]" as={`/cuenta/${user_id}`}>
+                            <Link color="black_dark" fontFamily="lato" borderColor="orange_" borderBottomWidth={ path == '/cuenta/[id]' ? 5 : 0}  mr={6} >
+                                <Flex h="100%" alignItems="center" justifyContent="center">
+                                    <Text>
+                                        Mi cuenta
+                                    </Text>
+                                </Flex>
+                            </Link>
+                        </NextLink> 
+                        )}
+
+
                         </MenuItem>
                     </MenuList>
                 </Menu>

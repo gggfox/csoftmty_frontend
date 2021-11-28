@@ -96,7 +96,7 @@ const Login: NextPage = () => {
 
                   <InputField name="email" placeholder="ejemplo@gmial.com" label="Email"/>
                   <Box m={3}/>          
-                  <InputField name="password" placeholder="mas de 8 caracteres" label="Contraseña"/>
+                  <InputField name="password" type="password" placeholder="mas de 8 caracteres" label="Contraseña"/>
 
                 
                 <Button 

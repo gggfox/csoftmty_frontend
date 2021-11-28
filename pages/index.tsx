@@ -1,9 +1,9 @@
-import { Box, Button, Flex,Grid,GridItem,Heading, Link} from '@chakra-ui/react'
+import { Box, Text, Flex,Grid,GridItem,Heading, Link} from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import React from 'react'
 import { Footer } from '../components/Footer'
 import { NavBar } from '../components/NavBar'
-import code from '../public/img/code.jpg'
+import code from '../public/img/code-opt.jpg'
 import Image from 'next/image'
 import { useWindowSize } from '../hooks/useWindowSize'
 import NextLink from 'next/link';
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   const size = useWindowSize()
 
   return (
-    <Flex bg="white_dark"  flexDirection="column">
+    <Flex bg="white_dark"  flexDirection="column" w="100%">
       <NavBar/>
 
       <Grid
@@ -25,7 +25,8 @@ const Home: NextPage = () => {
         bg="black_dark"
         >
           <GridItem rowSpan={16} colSpan={48} rowStart={1} colStart={1} zIndex={0}>
-            <Image src={code} alt="logo" layout="fill"/>
+            <Box h="100%" w="100%">
+            <Image src={code} alt="code" layout="intrinsic" /></Box>
           </GridItem>
 
           <GridItem 
@@ -77,6 +78,14 @@ const Home: NextPage = () => {
 
 
         </Grid>
+
+        <Flex flexDirection="column" p={10} zIndex={1} bg="white" w="100%">
+        <Heading>Beneficios</Heading>
+        <Text>
+        Al crear una cuenta y responder el formulario tendrás acceso a los datos generales de la industria TIC en Nuevo León. Podrás ver que tecnologías de la industria 4.0 son las más populares y cuales son de mayor interés en el estado. Podrás obtener analytica sobre datos de ventas en el extranjero, facturaciones, ingresos, personal y más datos.
+        </Text>
+
+        </Flex>
     
     <Footer/>
     </Flex>

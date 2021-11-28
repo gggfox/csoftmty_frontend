@@ -9,11 +9,13 @@ interface TarjetaProps{
     name: string,
     phone?:string,
     email?:string,
+    address?:string,
     details?: boolean,
+    website?:string,
     props?:BoxProps
 }
 
-export const TarjetaEmpresa : React.FC<TarjetaProps & BoxProps> = ({ details = true,businessId,business,name,email,phone, ...props}) => {
+export const TarjetaEmpresa : React.FC<TarjetaProps & BoxProps> = ({ details = true,businessId,business,name,email,phone,website,address, ...props}) => {
     return(
         <Flex width="100%"  paddingBottom="10" paddingTop="10" {...props} >
             <Avatar size="2xl"/>
@@ -29,6 +31,12 @@ export const TarjetaEmpresa : React.FC<TarjetaProps & BoxProps> = ({ details = t
                 </Text>
                 <Text fontSize="md">
                     {phone}
+                </Text>
+                <Text fontSize="md">
+                    {website}
+                </Text>
+                <Text fontSize="md">
+                    {address}
                 </Text>
                 { !details 
                   ? "" 
