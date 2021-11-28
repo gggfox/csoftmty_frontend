@@ -19,7 +19,7 @@ const theme = extendTheme({
       gray: '#7b7b7b',
       white_dark: '#f3f2f2',
       white_light: '#ffffff',
-      orange: '#f06534',
+      orange_: '#f06534',
       orange_trans: '#F06534c7',
     },
     fonts,

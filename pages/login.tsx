@@ -1,25 +1,128 @@
-import { Button, Flex, Heading, Input, Link, Text, Img } from '@chakra-ui/react'
+import { Button, Flex, Heading, Input, Link, Text, Img, Box, useToast } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import React from 'react'
-import logo from '../public/img/logo.png'
 import { NavBar } from '../components/NavBar'
-import styles from '../styles/Home.module.css'
+import { InputField } from '../components/InputField'
+import { Formik, Form } from 'formik'
+import axios from 'axios'
+import {useWindowSize} from '../hooks/useWindowSize'
 
 const Login: NextPage = () => {
+    const toast = useToast()
+    const size = useWindowSize(); 
+    
+    
   return (
-    <Flex bg="white_dark" h='100vh' flexDirection="column">
+     
+    <Flex 
+      bg="white_dark" 
+      h='100vh' 
+      flexDirection="column"
+    >
       <NavBar></NavBar>
-      <Flex height="100vh" alignItems="center" justifyContent="center" align = "center">
-        <Flex direction="column" bg="#7B7B7B" p={12} rounded={6} justifyContent="center" width = {['60vh', '80vh', '70vh', '60vh']} >
-          <Heading m={15} mb={6} color="white" as="b" marginBottom = "1px">Ingresar a cuenta</Heading>
-          <Text fontWeight="semibold" color="white">Email</Text>
-          <Input placeholder="mail@ejemplo.com" _placeholder={{"color":"white"}} variant="filled" mb={3} type="email" bg="#7B7B7B" 
-          borderColor="white" border="4px" focusBorderColor="white" _hover={{"bg":"light_grey"}} textColor="white"/>
-          <Text fontWeight="semibold" color="white">Contraseña</Text>
-          <Input placeholder="********" _placeholder={{"color":"white"}} variant="filled" mb={6} type="password" bg="#7B7B7B" 
-          borderColor="white" border="4px" focusBorderColor="white" _hover={{"bg":"light_grey"}} textColor="white"/>
-          <Button colorScheme="orange" backgroundColor="orange" mb={6}>Ingresar a cuenta</Button>
-          <Link color="white" align="center">Todavia no tengo cuenta</Link>
+      <Flex 
+        height="100vh" 
+        alignItems="center" 
+        justifyContent="center"
+      >
+        <Flex 
+          direction="column" 
+          bg="gray_dark" 
+         
+          p={12} 
+          rounded={6}
+        >
+
+      
+          <Formik 
+        initialValues={{  email: "", password:""}}
+        onSubmit={async (values,{setErrors}) => {
+          console.log(values)
+
+
+           try {
+              const {data} = await axios.post(
+              `${process.env.base_url}/auth`,
+              {
+                sEmail: values.email,
+                sPassword: values.password
+              })
+              console.log(data)
+              localStorage.setItem('token', data.token); // write
+              localStorage.setItem('myId', data.user._id)
+              console.log(localStorage.getItem('token')); // read
+              toast({
+                title: "Felicidades",
+                description: `${data.message}`,
+                status: "success",
+                duration: 9000,
+                isClosable: true,
+           
+              })
+            
+            }catch(err){
+              if(axios.isAxiosError(err)){
+                const msg = err.response?.data.message 
+                console.log('MSG',msg)            
+                toast({
+                title: "Usuario o contraseña incorrectos/inexistente",
+                description: msg,
+                status: "warning",
+                duration: 9000,
+                isClosable: true,
+            })
+              }else{
+                    
+                toast({
+                title: "Error inesperado",
+                description: `${err}`,
+                status: "error",
+                duration: 9000,
+                isClosable: true,
+           
+              })}}
+
+
+
+        }}>
+          {({isSubmitting}) => (
+            <Flex justifyContent="center" h="100%" bg="white_dark">
+              
+              <Form>
+              <Flex bg="gray_dark"  alignItems="center"  w={size?.width as number >= 650 ? "40vw" : "100%"} h="100%" flexDirection="column" p={10}>
+            
+                  <Heading color="white" as="b" m="3px" mb="1em" fontSize="1.9em">Ingresa a tu cuenta</Heading>
+
+
+                  <InputField name="email" placeholder="ejemplo@gmial.com" label="Email"/>
+                  <Box m={3}/>          
+                  <InputField name="password" type="password" placeholder="mas de 8 caracteres" label="Contraseña"/>
+
+                
+                <Button 
+                  colorScheme="orange" 
+                  bg="orange" 
+                  my={10}
+                  p={6} 
+                  isLoading={isSubmitting}  
+                  type="submit"
+                  w="100%"
+                >
+                  Proceder
+                </Button>
+
+                <Link href="/signup">
+                  <Text as="u" color="white" fontWeight="bold">Todavia no tengo cuenta</Text>
+                </Link>
+                </Flex>
+              </Form>
+              </Flex>
+            
+          )}
+        </Formik>
+
+        
+
         </Flex>
       </Flex>
       

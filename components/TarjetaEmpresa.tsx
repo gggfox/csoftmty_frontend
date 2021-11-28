@@ -1,38 +1,52 @@
 import React from 'react';
-import { Text, Flex, Link, Box, Button, background, Menu, MenuButton, Portal, MenuList, MenuItem, Avatar } from '@chakra-ui/react';
-import NextLink from 'next/link';
-import {useRouter } from 'next/router';
+import { Text, Flex, Box, Button, Avatar, BoxProps, Link } from '@chakra-ui/react';
 
-interface TarjetaProps {
-    details?: boolean
+import NextLink from 'next/link';
+
+interface TarjetaProps{
+    businessId:number,
+    business:string,
+    name: string,
+    phone?:string,
+    email?:string,
+    address?:string,
+    details?: boolean,
+    website?:string,
+    props?:BoxProps
 }
 
-export const TarjetaEmpresa : React.FC<TarjetaProps> = ({ details = true}) => {
+export const TarjetaEmpresa : React.FC<TarjetaProps & BoxProps> = ({ details = true,businessId,business,name,email,phone,website,address, ...props}) => {
     return(
-        <Flex width="100%" paddingLeft="10%" paddingBottom="10" paddingTop="10" paddingRight = "10">
+        <Flex width="100%"  paddingBottom="10" paddingTop="10" {...props} >
             <Avatar size="2xl"/>
             <Box ml="3">
                 <Text fontWeight="bold">
-                    Nombre Empresa
+                    {business}
                 </Text>
                 <Text fontSize="md">
-                    Nombre Contacto
+                    {name}
                 </Text>
                 <Text fontSize="md">
-                    Categoria
+                    {email}
                 </Text>
                 <Text fontSize="md">
-                    Email
+                    {phone}
                 </Text>
                 <Text fontSize="md">
-                    Numero
+                    {website}
                 </Text>
                 <Text fontSize="md">
-                    Pagina
+                    {address}
                 </Text>
                 { !details 
                   ? "" 
-                  : <Button colorScheme="orange" backgroundColor="orange" mt={4} mb={2}>Ver Detalles</Button>
+                  : (<NextLink href="/cuenta/[id]" as={`/cuenta/${businessId}`}>
+                     
+                            <Text>
+                                <Button colorScheme="orange" backgroundColor="orange_" my={4}>Ver Detalles</Button>
+                            </Text>
+                        
+                </NextLink> )
                 }
                 
             </Box>
